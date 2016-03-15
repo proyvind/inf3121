@@ -34,7 +34,7 @@ public class Minesweeper {
 	private static boolean gameCountinue() {
 		field.show();
 		System.out.print("\nPlease enter your move(row col): ");
-		String input = in.nextLine();
+		String input = in.nextLine().toLowerCase();
 
 		if (evalInput(input))
 			return false;
@@ -52,13 +52,17 @@ public class Minesweeper {
 	}
 
 	private static boolean evalInput(String input) {
-		if (input.equalsIgnoreCase("exit")) {
+		switch(input) {
+		case "exit":
 			rank.recordName(result);
 			return true;
-		} else if (input.equalsIgnoreCase("restart")) {
+		case "restart":
 			init(false);
-		} else if (input.equalsIgnoreCase("top"))
+			break;
+		case "top":
 			rank.show();
+			break;
+		}
 		return false;
 	}
 
