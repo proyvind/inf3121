@@ -39,15 +39,6 @@ public class Minesweeper {
 		if (evalInput(input))
 			return false;
 
-		if (field.legalMoveString(input) && ++result == 35) {
-			System.out.println("Congratulations you WON the game!");
-			init(false);
-		} else if (field.getBoom()) {
-			System.out.println(
-					"\nBooooooooooooooooooooooooooooom!You stepped on a mine!You survived " + result + " turns");
-			init(false);
-			
-		}
 		return true;
 	}
 
@@ -62,8 +53,21 @@ public class Minesweeper {
 		case "top":
 			rank.show();
 			break;
+		default:
+			mineProbe(input);
 		}
 		return false;
+	}
+
+	private static void mineProbe(String input) {
+		if (field.legalMoveString(input) && ++result == 35) {
+			System.out.println("Congratulations you WON the game!");
+			init(false);
+		} else if (field.getBoom()) {
+			System.out.println(
+					"\nBooooooooooooooooooooooooooooom!You stepped on a mine!You survived " + result + " turns");
+			init(false);
+		}
 	}
 
 /**
