@@ -25,16 +25,13 @@ public class Ranking{
 			return;
 		}
 		else if(last==MAX_PEOPLE_LIMIT){
-			name[MAX_PEOPLE_LIMIT-1]=newName;{
-				record[MAX_PEOPLE_LIMIT-1]=result;
-			}
+			name[MAX_PEOPLE_LIMIT-1]=newName;
+			record[MAX_PEOPLE_LIMIT-1]=result;
 		}
 		else{
-			name[last]=newName;{
-				record[last]=result;{
-					last++;
-				}
-			}
+			name[last]=newName;
+			record[last]=result;
+			last++;
 		}
 		
 		sort();
@@ -48,28 +45,26 @@ public class Ranking{
 			return;
 		}
 		System.out.println("N Name\t\tresult");
-		for(int i=0;i<last;i++){
+		for(int i=0;i<last;i++)
 			System.out.println((i+1)+" "+name[i]+"\t"+record[i]);
-		}
 	}
 	
 	
-	private void sort(){
-		if(last<2) return;
-		boolean unsorted=true;
-		while(unsorted){
-			unsorted=false;
-			for(int i=0;i<(last-1);i++){
-				if(record[i+1]>record[i]){
-					int swapR=record[i];{
-						record[i]=record[i+1];{
-							record[i+1]=swapR;
-							String swapN=name[i];
-							name[i]=name[i+1];
-							name[i+1]=swapN;
-							unsorted=true;
-						}
-					}
+	private void sort() {
+		if (last < 2)
+			return;
+		boolean unsorted = true;
+		while (unsorted) {
+			unsorted = false;
+			for (int i = 0; i < (last - 1); i++) {
+				if (record[i + 1] > record[i]) {
+					int swapR = record[i];
+					record[i] = record[i + 1];
+					record[i + 1] = swapR;
+					String swapN = name[i];
+					name[i] = name[i + 1];
+					name[i + 1] = swapN;
+					unsorted = true;
 				}
 			}
 		}
