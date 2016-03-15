@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class Minesweeper {
     private static Scanner in;
 	private static MineField field;
-	private static Ranking rank;	
+	private static Ranking rank;
+	private static int result;
 	public static void main(String[] args) {
 		rank=new Ranking();
 		mainMessage();
@@ -15,7 +16,7 @@ public class Minesweeper {
 	}	
 	private static boolean gameCountinue() {
 		field = new MineField();
-		int result = 0;
+		result = 0;
 		while (true) {
 
 			field.show();
@@ -23,7 +24,7 @@ public class Minesweeper {
 			in = new Scanner(System.in);
 			String input = in.nextLine();
 
-			if (evalInput(input, result))
+			if (evalInput(input))
 				return false;
 
 			if (field.legalMoveString(input)) {
@@ -43,7 +44,7 @@ public class Minesweeper {
 
 	}
 	
-	private static boolean evalInput(String input, int result) {
+	private static boolean evalInput(String input) {
 		if (input.equalsIgnoreCase("exit")) {
 			rank.recordName(result);
 			return true;
