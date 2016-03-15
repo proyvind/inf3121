@@ -14,7 +14,6 @@ class MineField{
 		boom=false;
 		
 
-		
 		int counter2=15;
 		int randomRow,randomCol;
 		Random RGenerator=new Random();
@@ -30,26 +29,20 @@ class MineField{
 		}
 	}
 	private boolean trymove(int randomRow, int randomCol) {
-		if(mines[randomRow][randomCol]){
+		if(mines[randomRow][randomCol])
 			return false;
-		}
 		else{
 			mines[randomRow][randomCol]=true;
 			return true;
 		}
 	}
 	private void boom() {
-		for(int row=0;row<rowMax;row++){
-			for(int col=0;col<colMax;col++){
-				if(mines[row][col]){
+		for(int row=0;row<rowMax;row++)
+			for(int col=0;col<colMax;col++)
+				if(mines[row][col])
 					visible[row][col]=true;
-				}
-			}
-		}
 		boom=true;
 		show();
-		
-		
 	}
 
 
@@ -57,23 +50,15 @@ class MineField{
 		int count=0;
 		if(visible[row][col]){
 			if(mines[row][col]) return '*';
-			for(int irow=row-1;irow<=row+1;irow++){
-				for(int icol=col-1;icol<=col+1;icol++){
-					if(icol>=0&&icol<colMax&&irow>=0&&irow<rowMax){
+			for(int irow=row-1;irow<=row+1;irow++)
+				for(int icol=col-1;icol<=col+1;icol++)
+					if(icol>=0&&icol<colMax&&irow>=0&&irow<rowMax)
 						if(mines[irow][icol]) count++;
-					}
-				}
-			}
 		}
 		else{
-			if(boom){
+			if(boom)
 				return '-';
-			}
-			{
-				
-				
-				return '?';
-			}
+			return '?';
 		}
 		switch(count){
 		case 0:return '0';
@@ -105,24 +90,19 @@ class MineField{
 			
 			row=Integer.parseInt(separated[0]);
 			col=Integer.parseInt(separated[1]);
-			if(row<0||col<0||row>=rowMax||col>=colMax){
+			if(row<0||col<0||row>=rowMax||col>=colMax)
 				throw new java.io.IOException();
-			}
 		}
 		catch(Exception e){
 			System.out.println("\nInvalid Input!");
 			return false;
 		}
 		
-		if(legalMoveValue(row,col)){
+		if(legalMoveValue(row,col))
 			return true;
-			
-			
-		}
-		else{
+		else
 			return false;
-		}
-	}
+ 	}
 
 
 	private boolean legalMoveValue(int row, int col) {
@@ -131,9 +111,8 @@ class MineField{
 			System.out.println("You stepped in allready revealed area!");
 			return false;
 		}
-		else{
+		else
 			visible[row][col]=true;
-		}
 		
 		if(mines[row][col]){
 			boom();
@@ -147,10 +126,8 @@ class MineField{
 		System.out.println("   ---------------------");
 		for(int row=0;row<rowMax;row++){
 			System.out.print(row+" |");
-			for(int col=0;col<colMax;col++){
+			for(int col=0;col<colMax;col++)
 				System.out.print(" "+drawChar(row,col));
-				
-			}
 			System.out.println(" |");
 		}
 		System.out.println("   ---------------------");
