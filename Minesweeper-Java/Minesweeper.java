@@ -4,7 +4,7 @@ import java.util.Scanner;
   * 
   */
 public class Minesweeper {
-
+    private static Scanner in;
 	private static MineField field;
 	private static Ranking rank;	
 	public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class Minesweeper {
 
 			field.show();
 			System.out.print("\nPlease enter your move(row col): ");
-			Scanner in = new Scanner(System.in);
+			in = new Scanner(System.in);
 			String input = in.nextLine();
 
 			if (input.equalsIgnoreCase("top")) {
