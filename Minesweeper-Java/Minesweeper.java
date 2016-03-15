@@ -33,11 +33,9 @@ public class Minesweeper {
 		if (evalInput(input))
 			return false;
 
-		if (field.legalMoveString(input)) {
-			if (++result == 35) {
-				System.out.println("Congratulations you WON the game!");
-				initGame(false);
-			}
+		if (field.legalMoveString(input) && ++result == 35) {
+			System.out.println("Congratulations you WON the game!");
+			initGame(false);
 		} else if (field.getBoom()) {
 			System.out.println(
 					"\nBooooooooooooooooooooooooooooom!You stepped on a mine!You survived " + result + " turns");
