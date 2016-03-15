@@ -10,13 +10,21 @@ public class Minesweeper {
 	private static int result;
 
 	public static void main(String[] args) {
+		Minesweeper game = new Minesweeper();
+		game.start();
+	}
+
+	Minesweeper() {
+		init(true);
+	}
+	
+	public void start() {
 		mainMessage();
-		initGame(true);
 		while (gameCountinue());
 		System.out.println("\nThank you for playing :) Have a nice day!");
 	}
-
-	private static void initGame(boolean first) {
+	
+	private static void init(boolean first) {
 		if (!first)
 			rank.recordName(result);
 		field = new MineField();
@@ -33,11 +41,11 @@ public class Minesweeper {
 
 		if (field.legalMoveString(input) && ++result == 35) {
 			System.out.println("Congratulations you WON the game!");
-			initGame(false);
+			init(false);
 		} else if (field.getBoom()) {
 			System.out.println(
 					"\nBooooooooooooooooooooooooooooom!You stepped on a mine!You survived " + result + " turns");
-			initGame(false);
+			init(false);
 			
 		}
 		return true;
@@ -48,7 +56,7 @@ public class Minesweeper {
 			rank.recordName(result);
 			return true;
 		} else if (input.equalsIgnoreCase("restart")) {
-			initGame(false);
+			init(false);
 		} else if (input.equalsIgnoreCase("top"))
 			rank.show();
 		return false;
