@@ -23,19 +23,9 @@ public class Minesweeper {
 			in = new Scanner(System.in);
 			String input = in.nextLine();
 
-			if (input.equalsIgnoreCase("top")) {
-				rank.show();
-				continue;
-
-			}
-			if (input.equalsIgnoreCase("restart")) {
-				rank.recordName(result);
-				return true;
-			}
-			if (input.equalsIgnoreCase("exit")) {
-				rank.recordName(result);
+			if (evalInput(input, result))
 				return false;
-			}
+
 			if (field.legalMoveString(input)) {
 				result++;
 				if (result == 35) {
@@ -53,6 +43,19 @@ public class Minesweeper {
 		}
 
 	}
+	
+	private static boolean evalInput(String input, int result) {
+		if (input.equalsIgnoreCase("exit")) {
+			rank.recordName(result);
+			return true;
+		}
+		else if (input.equalsIgnoreCase("restart"))
+			rank.recordName(result);
+		else if (input.equalsIgnoreCase("top"))
+			rank.show();
+		return false;
+	}
+
 /**
   * This is the menu for the game
   * 
