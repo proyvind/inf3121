@@ -6,6 +6,7 @@ public class Ranking{
 	private String[] name;
 	private int[] record;
 	private int last;
+	private final Scanner in=new Scanner(System.in);
 	
 	Ranking(){
 		name=new String[MAX_PEOPLE_LIMIT];
@@ -17,7 +18,7 @@ public class Ranking{
 
 	public void recordName(int result) {
 		System.out.print("\n Please enter your name -");
-		Scanner in=new Scanner(System.in);
+		
 		String newName=in.nextLine();
 		if((last==MAX_PEOPLE_LIMIT)&&record[MAX_PEOPLE_LIMIT-1]>result){
 			System.out.println("\nSorry you cannot enter top "+(MAX_PEOPLE_LIMIT)+" players");
