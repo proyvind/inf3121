@@ -18,7 +18,7 @@ public class Minesweeper {
 		init(true);
 	}
 	
-	public void start() {
+	private void start() {
 		mainMessage();
 		while (gameCountinue());
 		System.out.println("\nThank you for playing :) Have a nice day!");
