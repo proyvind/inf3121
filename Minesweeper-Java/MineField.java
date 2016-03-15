@@ -47,34 +47,29 @@ class MineField{
 
 
 	private char drawChar(int row, int col) {
-		int count=0;
-		if(visible[row][col]){
-			if(mines[row][col]) return '*';
-			for(int irow=row-1;irow<=row+1;irow++)
-				for(int icol=col-1;icol<=col+1;icol++)
-					if(icol>=0&&icol<colMax&&irow>=0&&irow<rowMax)
-						if(mines[irow][icol]) count++;
-		}
-		else{
-			if(boom)
-				return '-';
+		if (visible[row][col])
+			if (mines[row][col])
+				return '*';
+			else
+				return Integer.toString(minesNearby(row,col)).toCharArray()[0];
+			
+		else if (boom)
+			return '-';
+		else
 			return '?';
-		}
-		switch(count){
-		case 0:return '0';
-		case 1:return '1';
-		case 2:return '2';
-		case 3:return '3';
-		case 4:return '4';
-		case 5:return '5';
-		case 6:return '6';
-		case 7:return '7';
-		case 8:return '8';
-		
-		
-		default:return 'X';
-		}
 	}
+	
+	private int minesNearby(int row, int col){
+		int count = 0;
+
+		for (int irow = ((row-1 > 0) ? row-1 : 0); irow <= ((row + 1 >= rowMax) ? rowMax-1 : row+1); irow++)
+			for (int icol = ((col-1 > 0) ? col-1 : 0); icol <= ((col+1 >= rowMax) ? rowMax-1 : col+1); icol++)
+				if (mines[irow][icol])
+					count++;
+		
+		return count;
+	}
+	
 	public boolean getBoom(){
 		
 		return boom;
@@ -103,7 +98,6 @@ class MineField{
 		else
 			return false;
  	}
-
 
 	private boolean legalMoveValue(int row, int col) {
 		
