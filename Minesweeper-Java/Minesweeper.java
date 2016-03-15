@@ -13,8 +13,7 @@ public class Minesweeper {
 		rank = new Ranking();
 		mainMessage();
 		initGame();
-		while (gameCountinue())
-			;
+		while (gameCountinue());
 		System.out.println("\nThank you for playing :) Have a nice day!");
 	}
 
