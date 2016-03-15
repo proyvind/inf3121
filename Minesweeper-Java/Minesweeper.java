@@ -6,11 +6,10 @@ import java.util.Scanner;
 public class Minesweeper {
     private static final Scanner in = new Scanner(System.in);
 	private static MineField field;
-	private static Ranking rank;
+	private static Ranking rank = new Ranking();
 	private static int result;
 
 	public static void main(String[] args) {
-		rank = new Ranking();
 		mainMessage();
 		initGame(true);
 		while (gameCountinue());
