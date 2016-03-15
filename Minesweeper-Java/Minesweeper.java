@@ -4,7 +4,7 @@ import java.util.Scanner;
   * 
   */
 public class Minesweeper {
-    private static Scanner in;
+    private static final Scanner in = new Scanner(System.in);
 	private static MineField field;
 	private static Ranking rank;
 	private static int result;
@@ -27,7 +27,6 @@ public class Minesweeper {
 	private static boolean gameCountinue() {
 		field.show();
 		System.out.print("\nPlease enter your move(row col): ");
-		in = new Scanner(System.in);
 		String input = in.nextLine();
 
 		if (evalInput(input))
