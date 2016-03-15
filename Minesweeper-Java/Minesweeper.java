@@ -62,12 +62,13 @@ public class Minesweeper {
   */
 	
 	private static void mainMessage(){
-		System.out.println("Welcome to Minesweeper!" 
-			+ "\nTo play just input some coordinates and try not to step ont mine :)"
-			+ "\nUsefull commands:"
-			+ "\nrestart- Starts a new game."
-			+ "\nexit- Quits the game."
-			+ "\ntop- Reveals the top scoreboard."
-			+ "\nHave Fun !");
+		System.out.println(
+		    "Welcome to Minesweeper!\n" +
+			"To play just input some coordinates and try not to step ont mine :)\n" +
+			"Usefull commands:\n" +
+			"restart- Starts a new game.\n" +
+			"exit- Quits the game.\n" +
+			"top- Reveals the top scoreboard.\n" +
+			"Have Fun !");
 	}
 }
