@@ -34,9 +34,8 @@ public class Minesweeper {
 	private static boolean gameCountinue() {
 		field.show();
 		System.out.print("\nPlease enter your move(row col): ");
-		String input = in.nextLine().toLowerCase();
 
-		if (evalInput(input))
+		if (evalInput(in.nextLine().toLowerCase()))
 			return false;
 
 		return true;
