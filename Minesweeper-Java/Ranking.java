@@ -3,6 +3,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+  * bndbnmaVDvdmn
+  * 
+  */
 public class Ranking{
 
 	private final int MAX_PEOPLE_LIMIT = 5;
@@ -24,6 +28,10 @@ public class Ranking{
 		sort();
 		show();
 	}
+/**
+  * JSHSFJKASFHJ
+  * 
+  */
 	private void record(int result, String newName) {
 		if((last==MAX_PEOPLE_LIMIT)&&highScores.get(MAX_PEOPLE_LIMIT-1).score>result){
 			System.out.println("\nSorry you cannot enter top "+(MAX_PEOPLE_LIMIT)+" players");
@@ -36,7 +44,6 @@ public class Ranking{
 			last++;
 		}
 	}
-
 
 	public void show() {
 		if(last==0){
