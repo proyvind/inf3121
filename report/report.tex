@@ -1,0 +1,100 @@
+\documentclass[UKenglish]{article}  %% ... or USenglish or norsk
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{url}
+
+\usepackage[a4paper]{geometry}
+\usepackage{listings}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\urlstyle{sf}
+\usepackage{babel}
+\usepackage{ifikompendiumforside}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage[font={small,it,sf}]{caption}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usetikzlibrary{arrows, shadows}
+
+\title{INF4121 Project Assignment 1}
+\subtitle{Interpret the metrics offered by the static analyzer}
+\author{Per Øyvind Karlsen, Melat Fisseha Tekelmichael}
+
+\begin{document}
+\ififorside
+
+\section{Introducion}
+
+\subsection{Objective}
+The objective of the assignment is to discover what the source code does and
+test it manually. This source code then needs to be analyzed using a static
+analyzer tool called “Source Monitor”. The tool will help us obtain some
+code metrics and interpret them based on the project under analysis to see its
+weak parts of the code. The weak points then need to be improved and measure
+it again to see the improved metrics.
+The main aim will then be to compare the two interpretations of these metrics. 
+
+\subsection{Project selection}
+The Java implementation of Minesweeper was the project we chose to analyze for
+our assignment and is available on github:
+
+\url{https://github.com/proyvind/inf3121}
+
+\section{Requirement 1 - Brief analysis}
+
+\subsection{Brief description}
+The project we chose consists of three files: “MineField.java”,
+“Ranking.java” and a test program  “Minesweeper.java”.
+Each file is constructed with having only one class.
+The project is a game called Minesweeper where a player is initially presented
+with a grid of undifferentiated squares. Some randomly selected squares,
+unknown to the player, are designated to contain mines.
+Typically, the size of the grid and the number of mines are set in advance by
+the user, either by entering the numbers or selecting from defined skill
+levels, depending on the implementation. The number of mines, is equivalent to
+1/3 the number of squares, or less.
+
+\url{https://en.wikipedia.org/wiki/Minesweeper_(video_game)}
+
+\subsection{Analysis of testable parts}
+In order to test its functionality we have used black-box testing. Here we test
+the input and see the output we get. We chose the \textbf{Boundary value analysis}
+and \textbf{Equivalence class partitioning} techniques.
+We have also used two factors that will help us analyse the testable parts.
+\textbf{Observability}: where this shows us the degree of possibility to observe the
+test results.
+\textbf{Understandability}: to check if the component is self-explaining. 
+\textbf{Usability}: 
+
+As non- functional testing tests the quality characteristics of the component,
+it would not make sense not to write a non-functional tests. 
+Though it covers the aspects of the product that may not relate to a specific
+function, it still tests the aspects like reliability, usability, portability
+and many more. As to the program that i have selected to this assignment, I
+would say to write a non-functional test. To ground the argument let us assume
+that a customer needs to include this game in his/ her casino house.
+The owner that’s going to buy the product needs to know  if the these type
+of tests has been performed.
+
+\subsection{Non-functional tests}
+
+\subsubsection{Performance, load and stress}
+
+\subsubsection{Reliability}
+
+\subsubsection{Usability}
+
+\subsubsection{Efficiency}
+
+\subsubsection{Maintainability}
+
+\subsubsection{Portability}
+
+\subsection{Test cases}
+
+\end{document}
