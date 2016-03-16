@@ -1,5 +1,5 @@
 PAPER=report
-TEX = TEXINPUTS=./:./latex:$(TEXINPUTS) pdflatex -interaction nonstopmode
+TEX = TEXINPUTS=./:./latex:$(TEXINPUTS) pdflatex -interaction nonstopmode -halt-on-error
 
 all: $(PAPER).pdf
 
