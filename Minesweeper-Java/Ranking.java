@@ -59,9 +59,14 @@ public class Ranking{
 		name[i+1]=swapN;
 	}
 	
-	private void sort() {
-		if (last < 2)
-			return;
+	private void sort(){
+		if(last<2) return;
+		boolean unsorted=true;
+		while(unsorted)
+			unsorted=sortCont();
+	}
+	
+	private boolean sortCont() {
 		boolean unsorted = true;
 		while (unsorted) {
 			unsorted = false;
@@ -71,5 +76,6 @@ public class Ranking{
 					unsorted=true;
 				}
 		}
+		return unsorted;
 	}
 }
