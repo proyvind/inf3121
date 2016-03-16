@@ -23,9 +23,8 @@ class MineField{
 			randomRow=Math.abs(RGenerator.nextInt()%rowMax);
 			randomCol=Math.abs(RGenerator.nextInt()%colMax);
 			
-			if(trymove(randomRow,randomCol)){
+			if(trymove(randomRow,randomCol))
 				counter2--;
-			}
 		}
 	}
 	private boolean trymove(int randomRow, int randomCol) {
@@ -46,17 +45,15 @@ class MineField{
 	}
 
 
-	private char drawChar(int row, int col) {
-		if (visible[row][col])
-			if (mines[row][col])
-				return '*';
+	private String drawRow(int row) {
+		StringBuilder line = new StringBuilder(colMax*2);
+		for (int col = 0; col < colMax; col++) {
+			if (visible[row][col])
+					line.append((mines[row][col] ? "* " : Integer.toString(minesNearby(row, col))+' '));
 			else
-				return Integer.toString(minesNearby(row,col)).toCharArray()[0];
-			
-		else if (boom)
-			return '-';
-		else
-			return '?';
+				line.append((boom ? "- " : "? "));
+		}
+		return line.toString();
 	}
 	
 	private int minesNearby(int row, int col){
@@ -118,12 +115,8 @@ class MineField{
 	public void show() {
 		System.out.println("\n    0 1 2 3 4 5 6 7 8 9 ");
 		System.out.println("   ---------------------");
-		for(int row=0;row<rowMax;row++){
-			System.out.print(row+" |");
-			for(int col=0;col<colMax;col++)
-				System.out.print(" "+drawChar(row,col));
-			System.out.println(" |");
-		}
+		for(int row=0;row<rowMax;row++)
+			System.out.println(row+" | "+drawRow(row)+'|');
 		System.out.println("   ---------------------");
 	}
 	
