@@ -19,7 +19,11 @@ public class Ranking{
 	public void recordName(int result) {
 		System.out.print("\n Please enter your name -");
 		
-		String newName=in.nextLine();
+		record(result, in.nextLine());
+		sort();
+		show();
+	}
+	private void record(int result, String newName) {
 		if((last==MAX_PEOPLE_LIMIT)&&record[MAX_PEOPLE_LIMIT-1]>result){
 			System.out.println("\nSorry you cannot enter top "+(MAX_PEOPLE_LIMIT)+" players");
 			return;
@@ -33,9 +37,6 @@ public class Ranking{
 			record[last]=result;
 			last++;
 		}
-		
-		sort();
-		show();
 	}
 
 
