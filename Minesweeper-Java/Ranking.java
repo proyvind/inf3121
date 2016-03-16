@@ -1,16 +1,17 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Ranking{
 
-	private final int MAX_PEOPLE_LIMIT=5;
-	private String[] name;
-	private int[] record;
+	private final int MAX_PEOPLE_LIMIT = 5;
+	private List<HighScore> highScores;
 	private int last;
 	private final Scanner in=new Scanner(System.in);
 	
 	Ranking(){
-		name=new String[MAX_PEOPLE_LIMIT];
-		record=new int[MAX_PEOPLE_LIMIT];
+		highScores = new ArrayList<>(MAX_PEOPLE_LIMIT);
 		
 		last=0;
 	}
@@ -24,17 +25,14 @@ public class Ranking{
 		show();
 	}
 	private void record(int result, String newName) {
-		if((last==MAX_PEOPLE_LIMIT)&&record[MAX_PEOPLE_LIMIT-1]>result){
+		if((last==MAX_PEOPLE_LIMIT)&&highScores.get(MAX_PEOPLE_LIMIT-1).score>result){
 			System.out.println("\nSorry you cannot enter top "+(MAX_PEOPLE_LIMIT)+" players");
 			return;
 		}
-		else if(last==MAX_PEOPLE_LIMIT){
-			name[MAX_PEOPLE_LIMIT-1]=newName;
-			record[MAX_PEOPLE_LIMIT-1]=result;
-		}
+		else if(last==MAX_PEOPLE_LIMIT)
+			highScores.set(MAX_PEOPLE_LIMIT - 1, new HighScore(newName, result));
 		else{
-			name[last]=newName;
-			record[last]=result;
+			highScores.add(new HighScore(newName, result));
 			last++;
 		}
 	}
@@ -45,37 +43,30 @@ public class Ranking{
 			System.out.println("Still no results");
 			return;
 		}
-		System.out.println("N Name\t\tresult");
-		for(int i=0;i<last;i++)
-			System.out.println((i+1)+" "+name[i]+"\t"+record[i]);
-	}
-
-	private void swap(int i){
-		record[i]^=record[i+1];
-		record[i+1]^=record[i];
-		record[i]^=record[i+1];
-		String swapN=name[i];
-		name[i]=name[i+1];
-		name[i+1]=swapN;
+		System.out.println(String.format("%1$2s. %2$-10s\t%3$s", "N", "Name", "Result"));
+		for (int i = 0; i < highScores.size(); i++) {
+			HighScore result = highScores.get(i);
+			System.out.println(String.format("%1$2d. %2$-10s\t%3$s", i + 1, result.name, result.score));
+		}
 	}
 	
 	private void sort(){
-		if(last<2) return;
-		boolean unsorted=true;
-		while(unsorted)
-			unsorted=sortCont();
+		Collections.sort(highScores, (r1, r2) -> r2.score - r1.score);
 	}
 	
-	private boolean sortCont() {
-		boolean unsorted = true;
-		while (unsorted) {
-			unsorted = false;
-			for (int i = 0; i < (last - 1); i++)
-				if (record[i + 1] > record[i]) {
-					swap(i);
-					unsorted=true;
-				}
+	static class HighScore {
+		public final String name;
+		public final int score;
+
+		public HighScore(String name, int score) {
+			this.name = name;
+			this.score = score;
 		}
-		return unsorted;
+
+		@Override
+		public String toString() {
+			return String.format("%1$-10s\t%2$s", name, score);
+		}
 	}
+
 }
