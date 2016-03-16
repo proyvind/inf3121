@@ -48,7 +48,15 @@ public class Ranking{
 		for(int i=0;i<last;i++)
 			System.out.println((i+1)+" "+name[i]+"\t"+record[i]);
 	}
-	
+
+	private void swap(int i){
+		record[i]^=record[i+1];
+		record[i+1]^=record[i];
+		record[i]^=record[i+1];
+		String swapN=name[i];
+		name[i]=name[i+1];
+		name[i+1]=swapN;
+	}
 	
 	private void sort() {
 		if (last < 2)
@@ -56,17 +64,11 @@ public class Ranking{
 		boolean unsorted = true;
 		while (unsorted) {
 			unsorted = false;
-			for (int i = 0; i < (last - 1); i++) {
+			for (int i = 0; i < (last - 1); i++)
 				if (record[i + 1] > record[i]) {
-					int swapR = record[i];
-					record[i] = record[i + 1];
-					record[i + 1] = swapR;
-					String swapN = name[i];
-					name[i] = name[i + 1];
-					name[i + 1] = swapN;
-					unsorted = true;
+					swap(i);
+					unsorted=true;
 				}
-			}
 		}
 	}
 }
