@@ -45,17 +45,17 @@ class MineField{
 	}
 
 
-	private String drawRow(int row) {
-		StringBuilder line = new StringBuilder(colMax*2);
+	private void drawRow(int row) {
+		StringBuilder line = new StringBuilder(colMax * 2);
 		for (int col = 0; col < colMax; col++) {
 			if (visible[row][col])
-					line.append((mines[row][col] ? "* " : Integer.toString(minesNearby(row, col))+' '));
+				line.append((mines[row][col] ? "* " : Integer.toString(minesNearby(row, col)) + ' '));
 			else
 				line.append((boom ? "- " : "? "));
 		}
-		return line.toString();
+		System.out.println(row + " | " + line.toString() + "|");
+
 	}
-	
 	private int minesNearby(int row, int col){
 		int count = 0;
 
@@ -116,7 +116,7 @@ class MineField{
 		System.out.println("\n    0 1 2 3 4 5 6 7 8 9 ");
 		System.out.println("   ---------------------");
 		for(int row=0;row<rowMax;row++)
-			System.out.println(row+" | "+drawRow(row)+'|');
+			drawRow(row);
 		System.out.println("   ---------------------");
 	}
 	
