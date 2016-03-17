@@ -1,5 +1,8 @@
 import java.util.Random;
-
+/**
+  * kashdhfjasdfhas
+  * 
+  */
 class MineField{
 
 	private boolean[][] mines,visible;
@@ -27,6 +30,10 @@ class MineField{
 				counter2--;
 		}
 	}
+/**
+  * sKFLKADHFLKDAF
+  * 
+  */
 	private boolean trymove(int randomRow, int randomCol) {
 		if(mines[randomRow][randomCol])
 			return false;
@@ -35,6 +42,10 @@ class MineField{
 			return true;
 		}
 	}
+/**
+  * askfklahfifh
+  * 
+  */
 	private void boom() {
 		for(int row=0;row<rowMax;row++)
 			for(int col=0;col<colMax;col++)
@@ -44,7 +55,10 @@ class MineField{
 		show();
 	}
 
-
+/**
+  * nscasklasfnklasf
+  * 
+  */
 	private void drawRow(int row) {
 		StringBuilder line = new StringBuilder(colMax * 2);
 		for (int col = 0; col < colMax; col++) {
@@ -56,6 +70,10 @@ class MineField{
 		System.out.println(row + " | " + line.toString() + "|");
 
 	}
+/**
+  * jasldkfhdaøfhøasdkdlf
+  * 
+  */
 	private int minesNearby(int row, int col){
 		int count = 0;
 
@@ -66,13 +84,17 @@ class MineField{
 		
 		return count;
 	}
-	
+
+
 	public boolean getBoom(){
 		
 		return boom;
 	}
 
-
+/**
+  * 
+  * 
+  */
 	public boolean legalMoveString(String input) {
 		String[] separated=input.split(" ");
 		int row;
@@ -95,7 +117,10 @@ class MineField{
 		else
 			return false;
  	}
-
+/**
+  * 
+  * 
+  */
 	private boolean legalMoveValue(int row, int col) {
 		
 		if(visible[row][col]){
@@ -112,6 +137,7 @@ class MineField{
 		
 		return true;
 	}
+
 	public void show() {
 		System.out.println("\n    0 1 2 3 4 5 6 7 8 9 ");
 		System.out.println("   ---------------------");

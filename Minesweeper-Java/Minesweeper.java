@@ -78,10 +78,8 @@ public class Minesweeper {
 		System.out.println(
 		    "Welcome to Minesweeper!\n" +
 			"To play just input some coordinates and try not to step ont mine :)\n" +
-			"Usefull commands:\n" +
-			"restart- Starts a new game.\n" +
-			"exit- Quits the game.\n" +
-			"top- Reveals the top scoreboard.\n" +
+			"Usefull commands:\n" + "restart- Starts a new game.\n" +
+			"exit- Quits the game.\n" + "top- Reveals the top scoreboard.\n" +
 			"Have Fun !");
 	}
 }
