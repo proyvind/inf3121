@@ -123,7 +123,7 @@ class MineField{
 	private boolean legalMoveValue(int row, int col) {
 		
 		if(visible[row][col]){
-			System.out.println("You stepped in allready revealed area!");
+			System.out.println("You stepped in already revealed area!");
 			return false;
 		}
 		else

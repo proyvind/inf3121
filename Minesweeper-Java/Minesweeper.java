@@ -37,7 +37,7 @@ public class Minesweeper {
 	 */
 	public void start() {
 		mainMessage();
-		while (gameCountinue());
+		while (gameContinue());
 		System.out.println("\nThank you for playing :) Have a nice day!");
 	}
 	
@@ -48,7 +48,7 @@ public class Minesweeper {
 		result = 0;
 	}
 
-	private static boolean gameCountinue() {
+	private static boolean gameContinue() {
 		field.show();
 		System.out.print("\nPlease enter your move(row col): ");
 
@@ -89,8 +89,8 @@ public class Minesweeper {
 	private static void mainMessage(){
 		System.out.println(
 		    "Welcome to Minesweeper!\n" +
-			"To play just input some coordinates and try not to step ont mine :)\n" +
-			"Usefull commands:\n" + "restart- Starts a new game.\n" +
+			"To play just input some coordinates and try not to step on a mine :)\n" +
+			"Useful commands:\n" + "restart- Starts a new game.\n" +
 			"exit- Quits the game.\n" + "top- Reveals the top scoreboard.\n" +
 			"Have Fun !");
 	}
