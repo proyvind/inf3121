@@ -182,4 +182,16 @@ relation to comments metrics.
 
 Comment on static methods misrepresenting impact on metrics.
 
+Explain: Most of Minesweeper class remains static despite of being rewritten
+as an object oriented class, while start() is the only non-static and public
+function of the class. This is due to motivation for rewriting it as object
+oriented class has been for easier maintenance of the code without the intent
+of multiple instantions of. The start() function has been made public in order
+for instantion in different classes, ie. a separate class for testing rather
+than using/playing the program with a specific seed value for PRNG set or
+other any other debug/testing functionality.
+Also as support for defining custom number of rows and colons has been added
+to the MineField class, other classes with different values for would be
+made possible.
+
 \end{document}
