@@ -20,12 +20,12 @@ public class Minesweeper {
 	 * This object will only create the game itself, not actually start it.
 	 * 
 	 * @see 	Minesweeper#start()
-	 * @param	seedValue Provide own seed value for the PRNG, a value of 0 means
+	 * @param	seed Provide own seed value for the PRNG, a value of 0 means
 	 * 			no specified seed value will be set
 	 * @see		MineField#MineField(int)
 	 */
-	Minesweeper(int seedValue) {
-		seed = seedValue;
+	Minesweeper(int seed) {
+		Minesweeper.seed = seed;
 		init(true);
 	}
 	
