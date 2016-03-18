@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Minesweeper {
-    private static final Scanner in = new Scanner(System.in);
+	private static final Scanner in = new Scanner(System.in);
 	private static MineField field;
 	private static Ranking rank = new Ranking();
 	private static int result;
