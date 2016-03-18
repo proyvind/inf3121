@@ -8,17 +8,31 @@ public class Minesweeper {
 	private static MineField field;
 	private static Ranking rank = new Ranking();
 	private static int result;
+	private static int seed;
 
 	public static void main(String[] args) {
-		Minesweeper game = new Minesweeper();
+		Minesweeper game = new Minesweeper(0);
 		game.start();
 	}
 
-	Minesweeper() {
+	/**
+	 * Returns a Minesweeper object to play the game.
+	 * This object will only create the game itself, not actually start it.
+	 * 
+	 * @see 	Minesweeper#start()
+	 * @param	seedValue Provide own seed value for the PRNG, a value of 0 means
+	 * 			no specified seed value will be set
+	 * @see		MineField#MineField(int)
+	 */
+	Minesweeper(int seedValue) {
+		seed = seedValue;
 		init(true);
 	}
 	
-	private void start() {
+	/**
+	 * Starts the game.
+	 */
+	public void start() {
 		mainMessage();
 		while (gameCountinue());
 		System.out.println("\nThank you for playing :) Have a nice day!");
@@ -27,7 +41,7 @@ public class Minesweeper {
 	private static void init(boolean first) {
 		if (!first)
 			rank.recordName(result);
-		field = new MineField();
+		field = new MineField(seed);
 		result = 0;
 	}
 

@@ -10,7 +10,17 @@ class MineField{
 	private final int rowMax = 5;
 	private final int colMax = 10;
 	
-	MineField(){
+	/**
+	 * Return a MineField object that holds a populated mine field.
+	 * The seed value can be beneficial to use in order to get predictable
+	 * values used for mine field, which can be made use of for simulating
+	 * an entire game with expected results known in advance that can be
+	 * tested against for regressions.
+	 *
+	 * @param seed	Specify seed value for PRNG to use, a value of 0 means no
+	 * 				specified will be used.
+	 */
+	MineField(int seed){
 		
 		mines=new boolean[rowMax][colMax];
 		visible=new boolean[rowMax][colMax];
@@ -20,6 +30,8 @@ class MineField{
 		int counter2=15;
 		int randomRow,randomCol;
 		Random RGenerator=new Random();
+		if (seed != 0)
+			RGenerator.setSeed(seed);
 		
 		while(counter2>0){
 			
