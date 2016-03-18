@@ -168,6 +168,8 @@ The biggest file we have in the project is “MineField.java”. It contains 134
 
 \subsection{Metrics at file level}
 
+\subsubsection{File metrics interpretation}
+
 \includegraphics[height=8cm]{Minesweeper_java-kiviat-metrics-graph-original.png}
 
 \textbf{FIXME}: Repetive and merely stating the obvious.
@@ -218,6 +220,18 @@ The biggest file we have in the project is “MineField.java”. It contains 134
 	Lower than (3.88*).\\
 	\hline
 \end{longtable}
+
+\subsubsection{Methods refactoring}
+For the methods in this file, I would certainly refactor the code in order
+to get cleaner code that's easier to read, decreasing the maintenance burden
+and especially with regards to make further developmenr of in the future
+easier.
+
+Especially the gameCountinue() method stands out as an obvious candidate for
+refactoring due to it having the worst metrics,
+complexity at 8, 25 statements, maximum depth of 7 and 17 calls, while also
+having several lines of code commented out.
+																																															
 
 \section{TODO notes}
 Mention added possibility of setting seed value that would be very useful for
