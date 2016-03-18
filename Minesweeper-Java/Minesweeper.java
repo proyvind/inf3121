@@ -21,9 +21,9 @@ public class Minesweeper {
 	 * @param rowMax	Number of rows used for minefield generated
 	 * @param colMax	Number of colons used for minefield generated
 	 * @param seed		Specify	own seed value for the PRNG, a value of 0 means
-	 * 					no specified seed value will be used
-	 * @see				MineField#MineField(int)
-	 * @see 			Minesweeper#start()
+	 * 			no specified seed value will be used
+	 * @see			MineField#MineField(int)
+	 * @see 		Minesweeper#start()
 	 */
 	Minesweeper(int rowMax, int colMax, int seed) {
 		Minesweeper.seed = seed;
