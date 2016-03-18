@@ -8,10 +8,12 @@ public class Minesweeper {
 	private static MineField field;
 	private static Ranking rank = new Ranking();
 	private static int result;
+	private static int rowMax;
+	private static int colMax;
 	private static int seed;
 
 	public static void main(String[] args) {
-		Minesweeper game = new Minesweeper(0);
+		Minesweeper game = new Minesweeper(5, 10, 0);
 		game.start();
 	}
 
@@ -19,13 +21,19 @@ public class Minesweeper {
 	 * Returns a Minesweeper object to play the game.
 	 * This object will only create the game itself, not actually start it.
 	 * 
-	 * @see 	Minesweeper#start()
-	 * @param	seed Provide own seed value for the PRNG, a value of 0 means
-	 * 			no specified seed value will be set
-	 * @see		MineField#MineField(int)
+	 * @see 			Minesweeper#start()
+	 * @param rowMax	Number of rows used for mine field generated
+	 * @see				MineField#MineField(int, int, int)
+	 * @param colMax	Number of colons used for mine field generated
+	 * @see				MineField#MineField(int, int, int)
+	 * @param seed		Specify	own seed value for the PRNG, a value of 0 means
+	 * 					no specified seed value will be used
+	 * @see				MineField#MineField(int)
 	 */
-	Minesweeper(int seed) {
+	Minesweeper(int rowMax, int colMax, int seed) {
 		Minesweeper.seed = seed;
+		Minesweeper.rowMax = rowMax;
+		Minesweeper.colMax = colMax;
 		init(true);
 	}
 	
@@ -41,7 +49,7 @@ public class Minesweeper {
 	private static void init(boolean first) {
 		if (!first)
 			rank.recordName(result);
-		field = new MineField(seed);
+		field = new MineField(rowMax, colMax, seed);
 		result = 0;
 	}
 

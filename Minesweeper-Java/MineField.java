@@ -7,8 +7,8 @@ class MineField{
 
 	private boolean[][] mines,visible;
 	private boolean boom;
-	private final int rowMax = 5;
-	private final int colMax = 10;
+	private int rowMax;
+	private int colMax;
 	
 	/**
 	 * Return a MineField object that holds a populated mine field.
@@ -17,10 +17,12 @@ class MineField{
 	 * an entire game with expected results known in advance that can be
 	 * tested against for regressions.
 	 *
-	 * @param seed	Specify seed value for PRNG to use, a value of 0 means no
-	 * 				specified will be used.
+	 * @param rowMax	Number of rows used for mine field generated
+	 * @param colMax	Number of colons used for mine field generated
+	 * @param seed		Specify seed value for PRNG to use, a value of 0 means
+	 * 					no specified seed value will be used
 	 */
-	MineField(int seed){
+	MineField(int rowMax, int colMax, int seed){
 		
 		mines=new boolean[rowMax][colMax];
 		visible=new boolean[rowMax][colMax];
