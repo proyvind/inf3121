@@ -224,14 +224,34 @@ The biggest file we have in the project is “MineField.java”. It contains 134
 \subsubsection{Methods refactoring}
 For the methods in this file, I would certainly refactor the code in order
 to get cleaner code that's easier to read, decreasing the maintenance burden
-and especially with regards to make further developmenr of in the future
+and especially with regards to make further development of in the future
 easier.
 
+\textbf{FIXME: very clumsely written}
+
 Especially the gameCountinue() method stands out as an obvious candidate for
-refactoring due to it having the worst metrics,
-complexity at 8, 25 statements, maximum depth of 7 and 17 calls, while also
-having several lines of code commented out.
-																																															
+refactoring due to it having the worst metrics.
+A big problem with the method is the size of it. 25 statements in the function
+drives up the average statements per method to 12.33, which is higher than the
+ideal range (6-12).
+A lot of the statements are also conditional, with the resulting complexity
+ending up at 8.
+In order to improve the metrics, many statements should be moved out into
+separate functions. This would reduce the average number of statements per
+method, while also reducing the complexity due to so many conditional
+statements existing in one function.
+Also despite how the comments metric indicated that the commenting was at an
+ideal level, the metric severly misrepresented the actual situation as all
+the comments in the file turned out to simply be commented out code that
+should be removed, rather than actually having an ideal level of comments
+as first being given impression by.
+The unnecessary use of blocks together with conditional statements also leads
+to the depth of the function being unreasonably high.
+Most of the braces used to create blocks can simply be removed.
+
+\section{Requirement 3}
+\includegraphics[height=8cm]{project-metrics-summary-final.png}
+
 
 \section{TODO notes}
 Mention added possibility of setting seed value that would be very useful for
