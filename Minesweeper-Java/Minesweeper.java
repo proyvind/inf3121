@@ -1,8 +1,5 @@
 import java.util.Scanner;
-/**
-  * this class holds the main method
-  * 
-  */
+
 public class Minesweeper {
     private static final Scanner in = new Scanner(System.in);
 	private static MineField field;
@@ -21,14 +18,12 @@ public class Minesweeper {
 	 * Returns a Minesweeper object to play the game.
 	 * This object will only create the game itself, not actually start it.
 	 * 
-	 * @see 			Minesweeper#start()
-	 * @param rowMax	Number of rows used for mine field generated
-	 * @see				MineField#MineField(int, int, int)
-	 * @param colMax	Number of colons used for mine field generated
-	 * @see				MineField#MineField(int, int, int)
+	 * @param rowMax	Number of rows used for minefield generated
+	 * @param colMax	Number of colons used for minefield generated
 	 * @param seed		Specify	own seed value for the PRNG, a value of 0 means
 	 * 					no specified seed value will be used
 	 * @see				MineField#MineField(int)
+	 * @see 			Minesweeper#start()
 	 */
 	Minesweeper(int rowMax, int colMax, int seed) {
 		Minesweeper.seed = seed;
@@ -91,11 +86,6 @@ public class Minesweeper {
 		}
 	}
 
-/**
-  * This is the menu for the game
-  * 
-  */
-	
 	private static void mainMessage(){
 		System.out.println(
 		    "Welcome to Minesweeper!\n" +

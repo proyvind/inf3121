@@ -4,9 +4,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
-  * bndbnmaVDvdmn
-  * 
-  */
+ * This class stores a highscore with player names and scores.
+ */
 public class Ranking{
 
 	private final int MAX_PEOPLE_LIMIT = 5;
@@ -21,6 +20,11 @@ public class Ranking{
 	}
 
 
+	/**
+	 * Reads name from stdin and adds it to highscore if result is in top five.
+	 * 
+	 * @param result Result to record
+	 */
 	public void recordName(int result) {
 		System.out.print("\n Please enter your name -");
 		
@@ -28,10 +32,7 @@ public class Ranking{
 		sort();
 		show();
 	}
-/**
-  * JSHSFJKASFHJ
-  * 
-  */
+
 	private void record(int result, String newName) {
 		if((last==MAX_PEOPLE_LIMIT)&&highScores.get(MAX_PEOPLE_LIMIT-1).score>result){
 			System.out.println("\nSorry you cannot enter top "+(MAX_PEOPLE_LIMIT)+" players");
@@ -45,6 +46,9 @@ public class Ranking{
 		}
 	}
 
+	/**
+	 * Prints out highscore
+	 */
 	public void show() {
 		if(last==0){
 			System.out.println("Still no results");
