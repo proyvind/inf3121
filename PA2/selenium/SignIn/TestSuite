@@ -11,6 +11,7 @@
 <tr><td><a href="newUser">newUser</a></td></tr>
 <tr><td><a href="login">login</a></td></tr>
 <tr><td><a href="resetOrAtLeastChangePassword">resetOrAtLeastChangePassword</a></td></tr>
+<tr><td><a href="logout">logOut</a></td></tr>
 </tbody></table>
 </body>
 </html>
