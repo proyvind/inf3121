@@ -13,12 +13,17 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/4.7.9/product-list.php</td>
+	<td>/4.7.9/checkout.php</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=a.btn.btn-primary</td>
+	<td>link=Checkout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=billingInfo[Firstname]</td>
 	<td></td>
 </tr>
 <tr>
@@ -27,9 +32,84 @@
 	<td></td>
 </tr>
 <tr>
+	<td>type</td>
+	<td>name=billingInfo[Firstname]</td>
+	<td>Hank</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=billingInfo[Lastname]</td>
+	<td>Hill</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=shippingInfo[Email]</td>
+	<td>${user_email}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=shippingInfo[Postcode]</td>
+	<td>12345</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=billing-info-input_state_menu_select</td>
+	<td>label=Texas</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=billingInfo[City]</td>
+	<td>Arlen</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=billingInfo[Streetline1]</td>
+	<td>Hillbilly Drive 123</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=billingInfo[Streetline2]</td>
+	<td>Next to Bill's house</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=shippingInfo[Phone]</td>
+	<td>555-PROPANE</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=checkbox_shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Continue Checkout']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>css=h3.shipping_methods</td>
+	<td>Shipping Options</td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>xpath=(//input[@value='Continue Checkout'])[2]</td>
 	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=step_2_errors</td>
+	<td>1. Please select a delivery method.</td>
 </tr>
 <tr>
 	<td>click</td>
@@ -41,12 +121,6 @@
 	<td>xpath=(//input[@value='Continue Checkout'])[2]</td>
 	<td></td>
 </tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>//input[@value='Place Order']</td>
-	<td></td>
-</tr>
-
 </tbody></table>
 </body>
 </html>
