@@ -13,17 +13,7 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/4.7.9/product-info.php?Garmin_-_nuvi_205W_GPS_Receiver-pid130.html</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Desktops</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>xpath=(//a[contains(text(),'Details')])[2]</td>
+	<td>/4.7.9/home.php</td>
 	<td></td>
 </tr>
 <tr>
