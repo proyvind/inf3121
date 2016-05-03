@@ -18,45 +18,39 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Apparel</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=img.img-responsive</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Add To Cart']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=DVD</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=#ProductForm_116 &gt; div.product_img.pi-img-wrapper &gt; a &gt; img.img-responsive</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//input[@value='Add To Cart']</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
 	<td>link=Sport</td>
 	<td></td>
 </tr>
 <tr>
+	<td>waitForElementPresent</td>
+	<td>css=#ProductForm_130 &gt; a &gt; div.product_name &gt; h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#ProductForm_130 &gt; a &gt; div.product_name &gt; h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=quantity_in_cart</td>
+	<td>label=9</td>
+</tr>
+<tr>
 	<td>click</td>
 	<td>//input[@value='Add To Cart']</td>
 	<td></td>
 </tr>
-
+<tr>
+	<td>waitForVisible</td>
+	<td>css=div.ajax_message_box_text &gt; h2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.ajax_message_box_text &gt; h2</td>
+	<td>Product was added to your cart</td>
+</tr>
 </tbody></table>
 </body>
 </html>
