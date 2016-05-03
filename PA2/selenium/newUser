@@ -29,56 +29,71 @@
 <tr>
 	<td>type</td>
 	<td>name=customer_info[Customer][Email]</td>
-	<td>javascript{&quot;funky&quot;+Math.floor(Math.random()*10000)+&quot;@zeit.cum&quot;}</td>
+	<td>${user_email}</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>name=customer_info[Customer][Password]</td>
-	<td>funky123</td>
+	<td>${user_password}</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>name=customer_info[Customer][RePassword]</td>
-	<td>funky123</td>
+	<td>${user_password}</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>name=customer_info[Customer][FirstName]</td>
-	<td>Funky</td>
+	<td>Hank</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>name=customer_info[Customer][LastName]</td>
-	<td>Zeit</td>
+	<td>Hill</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=customer_info_Customer_State</td>
+	<td>label=Texas</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>name=customer_info[Customer][ZipCode]</td>
-	<td>12345</td>
+	<td>31337</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>name=customer_info[Customer][City]</td>
-	<td>Funkytown</td>
+	<td>Arlen</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>name=customer_info[Customer][Streetline1]</td>
-	<td>Boogey Avenue 123</td>
+	<td>Hillbilly Drive 123</td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>name=customer_info[Customer][Streetline1]</td>
-	<td>Boogie Avenue 123</td>
+	<td>name=customer_info[Customer][Streetline2]</td>
+	<td>The one next to Bill's</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>name=customer_info[Customer][Phone]</td>
-	<td>555-FUNK-THAT</td>
+	<td>555-PROPANE</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>//input[@value='Register']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=div.note.note-success</td>
+	<td>Account created successfully. You are now registered.</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>link=Sign Out</td>
 	<td></td>
 </tr>
 <tr>

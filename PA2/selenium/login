@@ -29,24 +29,18 @@
 <tr>
 	<td>type</td>
 	<td>id=account_sign_in_form_email_id</td>
-	<td>funky@zeit.cum</td>
+	<td>${user_email}</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=account_sign_in_form_passwd_id</td>
-	<td>funky123</td>
+	<td>${user_password}</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>//input[@value='Sign In']</td>
 	<td></td>
 </tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Sign Out</td>
-	<td></td>
-</tr>
-
 </tbody></table>
 </body>
 </html>
