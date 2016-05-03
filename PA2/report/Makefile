@@ -7,5 +7,5 @@ all: $(PAPER).pdf
 clean:
 	rm -fv $(PAPER).aux $(PAPER).log $(PAPER).dvi $(PAPER).pdf
 
-$(PAPER).pdf: $(PAPER).tex Minesweeper_java-kiviat-metrics-graph-original.png project-kiviat-metrics-graph-original.png project-kiviat-metrics-graph-final.png project-metrics-summary-original.png project-metrics-summary-final.png $(LOCALLATEX)/ifi-kompendium-forside-eng.png Minesweeper_java-kiviat-metrics-graph-final.png
+$(PAPER).pdf: $(PAPER).tex $(LOCALLATEX)/ifi-kompendium-forside-eng.png
 	$(TEX) $(PAPER) 
