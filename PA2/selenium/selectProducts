@@ -47,7 +47,7 @@
 	<td></td>
 </tr>
 <tr>
-	<td>assertText</td>
+	<td>verifyText</td>
 	<td>css=div.ajax_message_box_text &gt; h2</td>
 	<td>Product was added to your cart</td>
 </tr>
