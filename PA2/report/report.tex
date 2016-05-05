@@ -12,12 +12,12 @@
 
 \urlstyle{sf}
 
-\usepackage{tikz,babel,textcomp,csquotes,pgf-umlsd,varioref,graphicx, float}
+\usepackage{tikz,babel,textcomp,csquotes,varioref,graphicx,float}
+\usepackage{tikz-uml}
 \usepackage{babel}
 \usepackage{graphicx}
 \usepackage{ifikompendiumforside}
 \usepackage{hyperref}
-\usepackage{tikz}
 \usepackage{array}
 \usepackage[font={small,it,sf}]{caption}
 \usepackage{longtable}
@@ -36,6 +36,34 @@
 \subsection{Objective}
 
 \section{Requirement 1}
+
+\subsection{Manual tests}
+
+\subsubsection{Continue Shopping}
+
+\begin{tikzpicture}[scale=0.5, transform shape]
+	\begin{umlstate}[name=Amain]{Continue shopping}
+
+		\umlstateinitial[x=4, name=addProduct]
+		\umlbasicstate[y=-4, x=4, name=shoppingCart, fill=white]{Shopping cart}
+		\umlHVtrans[arg={User adds product}, pos=1.2]{addProduct}{shoppingCart}
+
+		\umlbasicstate[y=-8, name=increaseQuantity, fill=white, scale=0.5]{Increase Quantity}
+		\umltrans{shoppingCart}{increaseQuantity}
+
+		\umlbasicstate[y=-8, x=8, name=addNewItem, fill=white]{Add New Item}
+		\umltrans{shoppingCart}{addNewItem}
+
+		\umlbasicstate[y=-12, x=4, name=updateItems, fill=white]{Update total number of items}
+		\umltrans{increaseQuantity}{updateItems}
+		\umltrans{addNewItem}{updateItems}
+
+		\umlstateexit[x=4, y=-16, name=productAdded, fill=black, color=white]{Product added}
+
+		\umltrans[arg={Products updated}, pos=1]{updateItems}{productAdded}
+
+	\end{umlstate}
+\end{tikzpicture}
 
 \subsection{Incident Report}
 
