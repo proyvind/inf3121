@@ -21,7 +21,8 @@
 
 %% The main command:
 
-\newcommand{\ififorside}[1][]{\begin{titlepage}
+\newcommand{\ififorside}[1][]{\pagenumbering{alph}
+  \begin{titlepage}
     \def \and {, }
     \setkeys{IfiF@keys}{#1}
     \AddToShipoutPictureBG*{\IfiF@print@background}
@@ -31,6 +32,7 @@
     \AddToShipoutPictureFG*{\IfiF@print@title}
     \null
   \end{titlepage}
+  \pagenumbering{arabic}
   \if@twoside \IfiF@blankpage \fi}
 
 
