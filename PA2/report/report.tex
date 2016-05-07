@@ -83,18 +83,19 @@ Login success		& \YES	& \NO		& \NO		& \YES		\\ \hline
 Step	&	Description 					\\ \cline{2-3} &
 1	&	A: Open the e-commerce website   		\\ \cline{2-3} &
 2	&	A: Click "Sign In"				\\ \cline{2-3} &
-3	&	A: Enter valid email address \& password, remaining fields optional	\\ \cline{2-3} &
 4	&	A: Click "REGISTER" button			\\ \cline{2-3} &
-5	&	S: Validate new user information 		\\ \cline{2-3} &
-6	&	S: Create user account				\\ \cline{2-3} &
-7	&	S: Authenticate user				\\ \cline{2-3}
+5	&	A: Enter valid email address \& password, remaining fields optional	\\ \cline{2-3} &
+6	&	A: Click "REGISTER" button			\\ \cline{2-3} &
+7	&	S: Validate new user information 		\\ \cline{2-3} &
+8	&	S: Create user account				\\ \cline{2-3} &
+9	&	S: Authenticate user				\\ \cline{2-3}
 \hline
 \multirow{3}{*}{Extensions} &
-5a	&	\begin{tabular}[c]{@{}l@{}}
+7a	&	\begin{tabular}[c]{@{}l@{}}
 		Username/email address invalid/missing \\
 		S:Display proper error message
 		\end{tabular}	\\ \cline{2-3} &
-5b	&	\begin{tabular}[c]{@{}l@{}}
+7b	&	\begin{tabular}[c]{@{}l@{}}
 		Password missing or mismatch \\
 		S:Display proper error message
 		\end{tabular}	\\ \cline{2-3}
@@ -120,11 +121,11 @@ Step	&	Description 					\\ \cline{2-3} &
 5	&	S: Authenticate user				\\ \cline{2-3}
 \hline
 \multirow{3}{*}{Extensions} &
-4a	&	\begin{tabular}[c]{@{}l@{}}
+5a	&	\begin{tabular}[c]{@{}l@{}}
 		Invalid e-mail \\
 		S:Display proper error message
 		\end{tabular}	\\ \cline{2-3} &
-4b	&	\begin{tabular}[c]{@{}l@{}}
+5b	&	\begin{tabular}[c]{@{}l@{}}
 		Valid e-mail and incorrect password \\
 		S:Display proper error message
 		\end{tabular}	\\ \cline{2-3}
