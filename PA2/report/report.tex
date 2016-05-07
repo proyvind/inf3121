@@ -117,7 +117,7 @@ Step	&	Description 					\\ \cline{2-3} &
 2	&	A: Click "Sign In"				\\ \cline{2-3} &
 3	&	A: Enter user email address \& password		\\ \cline{2-3} &
 4	&	A: Click "SIGN IN" button			\\ \cline{2-3} &
-5	&	S: Authenticate user				\\ \cline{2-3} &
+5	&	S: Authenticate user				\\ \cline{2-3}
 \hline
 \multirow{3}{*}{Extensions} &
 4a	&	\begin{tabular}[c]{@{}l@{}}
@@ -125,9 +125,9 @@ Step	&	Description 					\\ \cline{2-3} &
 		S:Display proper error message
 		\end{tabular}	\\ \cline{2-3} &
 4b	&	\begin{tabular}[c]{@{}l@{}}
-		Valid e-mail and incorrect password
+		Valid e-mail and incorrect password \\
 		S:Display proper error message
-		\end{tabular}	\\ \cline{2-3} &
+		\end{tabular}	\\ \cline{2-3}
 \hline
 \end{tabular}
 \end{table}
@@ -139,7 +139,7 @@ Step	&	Description 					\\ \cline{2-3} &
 \centering
 \caption{Use case}
 \label{change-password-use-case}
-\begin{tabular}{|l|l|p{8cm}|}
+\begin{tabular}{|l|l|l|}
 \hline
 Preconditions:	& \multicolumn{2}{l|}{User logged in} \\ \hline
 \multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
@@ -156,11 +156,11 @@ Step	&	Description 					\\ \cline{2-3} &
 \hline
 \multirow{3}{*}{Extensions} &
 4a	&	\begin{tabular}[c]{@{}l@{}}
-		Invalid current password incorrect and invalid new password \& retype password \\
+		Invalid current password incorrect and valid new password combination \\
 		S:Display proper error message
 		\end{tabular}	\\ \cline{2-3} &
 4b	&	\begin{tabular}[c]{@{}l@{}}
-		Valid current password and new wassword \& current password missing or mismatch \\
+		Valid current password and invalid new password combination \\
 		S:Display proper error message
 		\end{tabular}	\\ \cline{2-3}
 \hline
