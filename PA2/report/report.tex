@@ -24,6 +24,7 @@
 \usepackage{longtable}
 \usepackage{multirow}
 \usepackage{wrapfig}
+\usepackage{titlesec,titletoc}
 \usetikzlibrary{arrows, shadows}
 
 \newcommand{\TRUE}{\cellcolor{green}{\textbf{True}}}
@@ -47,11 +48,13 @@
 
 \subsection{Manual tests}
 
-\subsubsection{1. Register customer, login, password reset}
+\subsubsection{1. Register new customer, login, password reset}
+
+\paragraph{Register new customer \& login}
 
 \begin{table}[ht]
 \centering
-\caption{Decision table for login/create user}
+\caption{Decission table}
 \label{newuser-decission-table}
 \begin{tabular}{|c|l|c|c|c|c|}
 \hline
@@ -68,18 +71,20 @@ Login success		& \YES	& \NO		& \NO		& \YES		\\ \hline
 \end{tabular}
 \end{table}
 
+\paragraph{Register new customer}
+
 \begin{table}[ht]
 \centering
-\caption{Use case for register/login user}
+\caption{Use case}
 \label{newuser-use-case}
 \begin{tabular}{|l|l|p{8cm}|}
 \hline
 \multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
 Step	&	Description 					\\ \cline{2-3} &
 1	&	A: Open the e-commerce website   		\\ \cline{2-3} &
-2	&	A: Click "sign-in"				\\ \cline{2-3} &
+2	&	A: Click "Sign In"				\\ \cline{2-3} &
 3	&	A: Enter valid email address \& password, remaining fields optional	\\ \cline{2-3} &
-4	&	A: Click "register"				\\ \cline{2-3} &
+4	&	A: Click "REGISTER" button			\\ \cline{2-3} &
 5	&	S: Validate new user information 		\\ \cline{2-3} &
 6	&	S: Create user account				\\ \cline{2-3} &
 7	&	S: Authenticate user				\\ \cline{2-3}
@@ -95,10 +100,42 @@ Step	&	Description 					\\ \cline{2-3} &
 \end{tabular}
 \end{table}
 
+\paragraph{Password reset}
+
+\begin{table}[ht]
+\centering
+\caption{Use case}
+\label{newuser-use-case}
+\begin{tabular}{|l|l|p{8cm}|}
+\hline
+Preconditions:	& \multicolumn{2}{l|}{User logged in} \\ \hline
+\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+Step	&	Description 					\\ \cline{2-3} &
+1	&	A: Click "Change Password"	   		\\ \cline{2-3} &
+2	&	A: Enter current password, new password and retype password	\\ \cline{2-3} &
+3	&	A: Click "CONTINUE" button			\\ \cline{2-3} &
+4	&	S: Validate Passwords				\\ \cline{2-3} &
+5	&	S: Change password				\\ \cline{2-3} &
+7	&	A: Click "Sign Out"				\\ \cline{2-3} &
+8	&	A: Enter username \& new password		\\ \cline{2-3} &
+9	&	A: Click "SIGN IN"				\\ \cline{2-3} &
+10	&	S: Authenticate user				\\ \cline{2-3}
+\hline
+\multirow{3}{*}{Extensions} &
+4a	&	\begin{tabular}[c]{@{}l@{}}
+		Current password incorrect \\
+		S:Display error message without proceeding	\end{tabular}	\\ \cline{2-3} &
+4b	&	\begin{tabular}[c]{@{}l@{}}
+		Password missing or mismatch \\
+		S:Display error message without proceeding	\end{tabular}	\\ \cline{2-3}
+\hline
+\end{tabular}
+\end{table}
+
 \subsubsection{Continue Shopping}
 
 \begin{tikzpicture}[scale=0.5, transform shape]
-	\begin{umlstate}[name=coninueShopping]{Continue shopping}
+	\begin{umlstate}[name=continueShopping]{Continue shopping}
 		\umlstateinitial[x=4, name=addProduct]
 		\umlbasicstate[x=4, y=-3, name=shoppingCart, fill=white]{Shopping cart}
 		\umlHVtrans[arg={User adds product}, pos=1.2]{addProduct}{shoppingCart}
