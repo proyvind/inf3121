@@ -102,12 +102,43 @@ Step	&	Description 					\\ \cline{2-3} &
 \end{tabular}
 \end{table}
 
+\paragraph{Login}
+
+\begin{table}[ht]
+\centering
+\caption{Use case}
+\label{login-use-case}
+\begin{tabular}{|l|l|p{8cm}|}
+\hline
+Preconditions:	& \multicolumn{2}{l|}{User exists and is logged out} \\ \hline
+\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+Step	&	Description 					\\ \cline{2-3} &
+1	&	A: Open the e-commerce website   		\\ \cline{2-3} &
+2	&	A: Click "Sign In"				\\ \cline{2-3} &
+3	&	A: Enter user email address \& password		\\ \cline{2-3} &
+4	&	A: Click "SIGN IN" button			\\ \cline{2-3} &
+5	&	S: Authenticate user				\\ \cline{2-3} &
+\hline
+\multirow{3}{*}{Extensions} &
+4a	&	\begin{tabular}[c]{@{}l@{}}
+		Invalid e-mail \\
+		S:Display proper error message
+		\end{tabular}	\\ \cline{2-3} &
+4b	&	\begin{tabular}[c]{@{}l@{}}
+		Valid e-mail and incorrect password
+		S:Display proper error message
+		\end{tabular}	\\ \cline{2-3} &
+\hline
+\end{tabular}
+\end{table}
+
+
 \paragraph{Password reset}
 
 \begin{table}[ht]
 \centering
 \caption{Use case}
-\label{newuser-use-case}
+\label{change-password-use-case}
 \begin{tabular}{|l|l|p{8cm}|}
 \hline
 Preconditions:	& \multicolumn{2}{l|}{User logged in} \\ \hline
@@ -120,7 +151,7 @@ Step	&	Description 					\\ \cline{2-3} &
 5	&	S: Change password				\\ \cline{2-3} &
 7	&	A: Click "Sign Out"				\\ \cline{2-3} &
 8	&	A: Enter username \& new password		\\ \cline{2-3} &
-9	&	A: Click "SIGN IN"				\\ \cline{2-3} &
+9	&	A: Click "SIGN IN" button			\\ \cline{2-3} &
 10	&	S: Authenticate user				\\ \cline{2-3}
 \hline
 \multirow{3}{*}{Extensions} &
@@ -130,7 +161,7 @@ Step	&	Description 					\\ \cline{2-3} &
 		\end{tabular}	\\ \cline{2-3} &
 4b	&	\begin{tabular}[c]{@{}l@{}}
 		Valid current password and new wassword \& current password missing or mismatch \\
-		S:Display proper error
+		S:Display proper error message
 		\end{tabular}	\\ \cline{2-3}
 \hline
 \end{tabular}
