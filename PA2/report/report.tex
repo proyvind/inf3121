@@ -209,6 +209,33 @@ Step	&	Description 						\\ \cline{2-3} &
 	\end{umlstate}
 \end{tikzpicture}
 
+\paragraph{Checkout}
+
+\begin{table}[ht]
+\centering
+\caption{Use case}
+\label{checkout-use-case}
+\begin{tabular}{|l|l|l|}
+\hline
+Preconditions:	& \multicolumn{2}{l|}{User logged in with items in cart} \\ \hline
+\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+Step	&	Description 					\\ \cline{2-3} &
+1	&	A: Click "Checkout"		   		\\ \cline{2-3} &
+2	&	A: Click "Continue Checkout"			\\ \cline{2-3} &
+3	&	A: Fill out form				\\ \cline{2-3} &
+4	&	A: Click "Continue Checkout"			\\ \cline{2-3} &
+5	&	A: Select shipping method			\\ \cline{2-3} &
+5	&	A: Click "Continue Checkout"			\\ \cline{2-3} &
+6	&	S: Validate shipping method			\\ \cline{2-3}
+\hline
+\multirow{1}{*}{Extensions} &
+6a	&	\begin{tabular}[c]{@{}l@{}}
+		Shipping option not selected \\
+		S:Display proper error message
+		\end{tabular}	\\ \cline{2-3}
+\hline
+\end{tabular}
+\end{table}
 \subsection{Incident Report}
 
 \begin{center}
