@@ -8,16 +8,15 @@
 <body>
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
-<tr><td><a href="setUp">setUp</a></td></tr>
-<tr><td><a href="newUser">newUser</a></td></tr>
-<tr><td><a href="resetOrAtLeastChangePassword">resetOrAtLeastChangePassword</a></td></tr>
-<tr><td><a href="login">login</a></td></tr>
-<tr><td><a href="selectProducts">selectProducts</a></td></tr>
-<tr><td><a href="continueShopping">continueShopping</a></td></tr>
-<tr><td><a href="checkOut">checkOut</a></td></tr>
-<tr><td><a href="changeNumberOfItems">changeNumberOfItems</a></td></tr>
-<tr><td><a href="finalizeOrder">finalizeOrder</a></td></tr>
-<tr><td><a href="logout">logOut</a></td></tr>
+<tr><td><a href="New user">New user</a></td></tr>
+<tr><td><a href="Reset password">Reset password</a></td></tr>
+<tr><td><a href="Login">Login</a></td></tr>
+<tr><td><a href="Select products">Select products</a></td></tr>
+<tr><td><a href="Continue shopping">Continue shopping</a></td></tr>
+<tr><td><a href="Checkout">Checkout</a></td></tr>
+<tr><td><a href="Change number of items">Change number of items</a></td></tr>
+<tr><td><a href="Finalize order">Finalize order</a></td></tr>
+<tr><td><a href="Log out">Log out</a></td></tr>
 </tbody></table>
 </body>
 </html>
