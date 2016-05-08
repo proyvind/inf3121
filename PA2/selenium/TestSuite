@@ -9,8 +9,8 @@
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="Register new customer">Register new customer</a></td></tr>
-<tr><td><a href="Reset password">Reset password</a></td></tr>
 <tr><td><a href="Login">Login</a></td></tr>
+<tr><td><a href="Reset password">Reset password</a></td></tr>
 <tr><td><a href="Select products">Select products</a></td></tr>
 <tr><td><a href="Continue shopping">Continue shopping</a></td></tr>
 <tr><td><a href="Checkout">Checkout</a></td></tr>
