@@ -22,18 +22,18 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
-	<td>//form[@id='Product_Quan']/table/tbody/tr[4]/td[6]/a</td>
+	<td>click</td>
+	<td>name=quantity_in_cart[2]</td>
 	<td></td>
 </tr>
 <tr>
 	<td>selectAndWait</td>
-	<td>name=quantity_in_cart[3]</td>
+	<td>name=quantity_in_cart[2]</td>
 	<td>label=30</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=div.form-group &gt; a.btn.btn-primary</td>
+	<td>//form[@id='Product_Quan']/table/tbody/tr[3]/td[6]/a</td>
 	<td></td>
 </tr>
 </tbody></table>
