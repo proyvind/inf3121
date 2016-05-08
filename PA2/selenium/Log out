@@ -21,11 +21,6 @@
 	<td>link=Sign In</td>
 	<td>Sign In</td>
 </tr>
-<tr>
-	<td>verifyElementPresent</td>
-	<td>link=Sign Out</td>
-	<td></td>
-</tr>
 </tbody></table>
 </body>
 </html>
