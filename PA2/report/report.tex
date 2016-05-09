@@ -47,7 +47,7 @@
 \subsection{Manual tests}
 
 \begin{description}
-	\item[\req{1}{Sign-in}{\textit{Not really an independent test..}}]
+	\item \req{1}{Sign-in}{\textit{Not really an independent test..}}
 		\begin{table}[ht]
 			\centering
 			\caption{Sign-in decission table}
@@ -68,16 +68,18 @@
 		\end{table}
 		\newpage
 		\begin{description}
-			\item[\req{1.1}{Register new customer}{
+			\item\req{1.1}{Register new customer}{
 				In order for test to pass. Didn'check for missing username were excluded
 				due to to it generating internal server error...
-		}|]
+		}
 		\begin{table}[ht]
 			\centering
 			\caption{Register new customer use case}
 			\label{register-new-customer-use-case}
 			\begin{tabular}{|l|l|p{8cm}|}
 				\hline
+				Objective:	& \multicolumn{2}{l|}{Verify that customer registation works} \\ \hline
+				Preconditions:	& \multicolumn{2}{l|}{No user is logged in} \\ \hline
 			\multirow{9}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
 				Step	&	Description 					\\ \cline{2-3} &
 				1	&	A: Open the e-commerce website   		\\ \cline{2-3} &
@@ -101,13 +103,14 @@
 			\hline
 		\end{tabular}
 	\end{table}
-\item[\req{1.2}{Login}{Automatic test is fully consistent with manual}]
+\item \req{1.2}{Login}{Automatic test is fully consistent with manual}
 	\begin{table}[ht]
 		\centering
 		\caption{Login use case}
 		\label{login-use-case}
 		\begin{tabular}{|l|l|p{8cm}|}
 			\hline
+			Objective:	& \multicolumn{2}{l|}{Verify sign in functionality} \\ \hline
 			Preconditions:	& \multicolumn{2}{l|}{User exists and is logged out} \\ \hline
 		\multirow{5}{*}{\begin{tabular}[l]{@{}l@{}}\\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
 			Step	&	Description 					\\ \cline{2-3} &
@@ -130,13 +133,18 @@
 	\end{tabular}
 \end{table}
 \newpage
-	\item[\req{1.3}{Password reset}{Automatic test is fully consistent with manual}]
+	\item \req{1.3}{Password reset}{
+				Automatic test is consistent with manual with the exception of it
+				changing password a second time in order to revert it to the
+				original password.
+		}
 		\begin{table}[ht]
 			\centering
 			\caption{Password reset use case}
 			\label{password-reset-use-case}
 			\begin{tabular}{|l|l|l|}
 				\hline
+				Objective:	& \multicolumn{2}{l|}{Verify password change functionaliy} \\ \hline
 				Preconditions:	& \multicolumn{2}{l|}{User logged in} \\ \hline
 			\multirow{10}{*}{\begin{tabular}[l]{@{}l@{}}\\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
 				Step	&	Description 					\\ \cline{2-3} &
@@ -163,14 +171,15 @@
 		\end{tabular}
 	\end{table}
 \end{description}
-\item[\req{2}{Selecting products}{Automatic test is fully consistent with manual}]
+\item \req{2}{Selecting products}{Automatic test is fully consistent with manual}
 	\begin{table}[ht]
 		\centering
 		\caption{Selecting products use case}
 		\label{selecting-products-use-case}
 		\begin{tabular}{|l|l|l|}
 			\hline
-			Preconditions:	& \multicolumn{2}{l|}{User logged in with cart empty} \\ \hline
+			Objective:	& \multicolumn{2}{l|}{Verify that adding product to cart works} \\ \hline
+			Preconditions:	& \multicolumn{2}{l|}{User logged in, cart is empty} \\ \hline
 		\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
 			Step	&	Description 						\\ \cline{2-3} &
 			1	&	A: Click "ADD TO CART" for a product in the store	\\ \cline{2-3} &
@@ -179,10 +188,10 @@
 		\end{tabular}
 	\end{table}
 	\newpage
-\item[\req{3}{Continue shopping}{
-	In stead of just adding one item, the automatic test adds several items with different attributes
-	for in order to test that all the various items with the various attribute type combinations.
-	}]
+\item \req{3}{Continue shopping}{
+			In stead of just adding one item, the automatic test adds several items with different attributes
+			for in order to test that all the various items with the various attribute type combinations.
+	}
 	\begin{tikzpicture}[scale=0.5, transform shape]
 		\begin{umlstate}[name=continueShopping]{Continue shopping}
 			\umlstateinitial[x=4, name=addProduct]
@@ -211,7 +220,8 @@
 		\label{continue-shopping-use-case}
 		\begin{tabular}{|l|l|l|}
 			\hline
-			Preconditions:	& \multicolumn{2}{l|}{User logged in with one item in cart} \\ \hline
+			Objective:	& \multicolumn{2}{l|}{Verify that adding product to cart works} \\ \hline
+			Preconditions:	& \multicolumn{2}{l|}{User logged, cart has one item} \\ \hline
 		\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
 			Step	&	Description 						\\ \cline{2-3} &
 			1	&	A: Click "ADD TO CART" for another product in the store	\\ \cline{2-3} &
@@ -219,14 +229,15 @@
 			\hline
 		\end{tabular}
 	\end{table}
-\item[\req{4}{Checkout}{Automatic test is fully consistent with manual}]
+\item \req{4}{Checkout}{Automatic test is fully consistent with manual}
 	\begin{table}[ht]
 		\centering
 		\caption{Checkout use case}
 		\label{checkout-use-case}
 		\begin{tabular}{|l|l|l|}
 			\hline
-			Preconditions:	& \multicolumn{2}{l|}{User logged in with items in cart} \\ \hline
+			Objective:	& \multicolumn{2}{l|}{Verify that entering billing \& shipping information works} \\ \hline
+			Preconditions:	& \multicolumn{2}{l|}{User logged in, cart has items} \\ \hline
 		\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
 			Step	&	Description 					\\ \cline{2-3} &
 			1	&	A: Click "Checkout"		   		\\ \cline{2-3} &
@@ -246,17 +257,18 @@
 	\end{tabular}
 \end{table}
 \newpage
-	\item[\req{5}{Change number of items}{
-		Was unable to record the remove item action as specified in step 5 with selenium and
-		didn't have the time to figure out how to implement it.
-}]
+	\item \req{5}{Change number of items}{
+				Was unable to record the remove item action as specified in step 5 with selenium and
+				didn't have the time to figure out how to implement it.
+		}
 		\begin{table}[ht]
 			\centering
 			\caption{Change number of items use case}
 			\label{change-number-of-items-use-case}
 			\begin{tabular}{|l|l|l|}
 				\hline
-				Preconditions:	& \multicolumn{2}{l|}{User logged in with items in cart} \\ \hline
+				Objective:	& \multicolumn{2}{l|}{Verify that changing number of items in cart works} \\ \hline
+				Preconditions:	& \multicolumn{2}{l|}{User logged in, cart has two or more items} \\ \hline
 			\multirow{5}{*}{\begin{tabular}[l]{@{}l@{}}\\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
 				Step	&	Description 						\\ \cline{2-3} &
 				1	&	A: Click on "My cart"		   			\\ \cline{2-3} &
@@ -267,14 +279,15 @@
 				\hline
 			\end{tabular}
 		\end{table}
-	\item[\req{6}{Finalize order successfully}{Automatic test is fully consistent with manual}]
+	\item \req{6}{Finalize order successfully}{Automatic test is fully consistent with manual}
 		\begin{table}[ht]
 			\centering
 			\caption{Finalize order successfully}
 			\label{finalize-order-use-case}
 			\begin{tabular}{|l|l|l|}
 				\hline
-				Preconditions:	& \multicolumn{2}{l|}{User logged in with billing \& shipping information already entered} \\ \hline
+				Objective:	& \multicolumn{2}{l|}{Verify that placing order works} \\ \hline
+				Preconditions:	& \multicolumn{2}{l|}{User logged in, billing \& shipping information already entered} \\ \hline
 			\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
 				Step	&	Description 					\\ \cline{2-3} &
 				1	&	A: Click "Checkout"		   		\\ \cline{2-3} &
@@ -286,7 +299,7 @@
 				\hline
 			\end{tabular}
 		\end{table}
-	\item[\req{7}{Log out}{
+	\item \req{7}{Log out}{
 				Automatic test run in different order, rather running as the second test in order to
 				run the unit test for the functionality before other tests uses it.
 				Otherwise if it were to be broken, it would be properly reported as such right away rather
@@ -295,13 +308,14 @@
 				unit test failing. Also in the case of this unit test being executed as the last one, other
 				tests failing before it could result in breaking this test, resulting in it failing, despite
 				of the functionality in question might be properly working.
-		}]
+		}
 		\begin{table}[ht]
 			\centering
 			\caption{Log out use case}
 			\label{logout-products-use-case}
 			\begin{tabular}{|l|l|l|}
 				\hline
+				Objective:	& \multicolumn{2}{l|}{Verify that placing order works} \\ \hline
 				Preconditions:	& \multicolumn{2}{l|}{User logged in} \\ \hline
 			\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
 				Step	&	Description 		\\ \cline{2-3} &
@@ -341,12 +355,12 @@ GitHub repository for automated tests: \url{https://github.com/proyvind/inf3121}
 
 In my test suite I've used the same order for the unit tests as listed in
 the requirement. As both the username and password to be used for a new user
-that will be registreted in the first 1.1 unit test and then used for all
+that will be registreted in the first TC1.1 unit test and then used for all
 tests, it's crucial for the test suite to be run from the first test.
 As the registration authenticates the user, it's required to sign out before
 being able to perform the other tests requiring signing in.
 As we have TC7 for this functionality, TC1.1 doesn't sign out, in
-stead unit TC7 is run as the second test for this functionality being
+stead TC7 is run as the second test for this functionality being
 covered by it's relevant test before being used in any tests following.
 
 All tests following depends on the state following the previous test's completion,
