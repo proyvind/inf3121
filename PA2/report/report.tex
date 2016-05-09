@@ -14,6 +14,7 @@
 
 \usepackage[table]{xcolor}
 \usepackage{tikz,babel,textcomp,csquotes,varioref,graphicx,float}
+\usepackage{rtm}
 \usepackage{tikz-uml}
 \usepackage{babel}
 \usepackage{graphicx}
@@ -40,275 +41,274 @@
 \begin{document}
 \ififorside
 
-\section{Introducion}
+\section{Requirements}
 
-\subsection{Objective}
-
-\section{Requirement 1}
+\begin{description}
+  \item[\req{1}] Sign-in
+  \begin{description}
+	  \item[\req{1.1}] Register new customer
+	  \item[\req{1.2}] Login
+	  \item[\req{1.3}] Password reset
+  \end{description}
+  \item[\req{2}] Select products
+  \item[\req{3}] Continue shopping
+  \item[\req{4}] Checkout
+  \item[\req{5}] Change number of items
+  \item[\req{6}] Finalize order succesfully
+  \item[\req{7}] Log out
+\end{description}
 
 \subsection{Manual tests}
 
-\subsubsection{1. Register new customer, login, password reset}
-
-\paragraph{Register new customer \& login}
-
-\begin{table}[ht]
-\centering
-\caption{Decission table}
-\label{newuser-decission-table}
-\begin{tabular}{|c|l|c|c|c|c|}
-\hline
-\parbox[t]{3mm}{\multirow{4}{*}{\rotatebox[origin=c]{90}{Conditions}}} &
-New user 		& \TRUE	& \FALSE	& \FALSE	& \NONE		\\ \cline{2-6} &
-Valid username		& \NONE	& \FALSE	& \NONE		& \TRUE		\\ \cline{2-6} &
-Valid password		& \NONE	& \NONE		& \FALSE	& \TRUE		\\ \cline{2-6} &
-\multicolumn{5}{l|}{} \\
-\hline
-\parbox[t]{3mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{Actions}}} &
-Create user		& \YES	& \NO		& \NO		& \NO		\\ \cline{2-6} &
-Login fail (error) 	& \NO	& \YES		& \YES		& \NO		\\ \cline{2-6} &
-Login success		& \YES	& \NO		& \NO		& \YES		\\ \hline
-\end{tabular}
-\end{table}
-
-\paragraph{Register new customer}
-
-\begin{table}[ht]
-\centering
-\caption{Use case}
-\label{newuser-use-case}
-\begin{tabular}{|l|l|p{8cm}|}
-\hline
-\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
-Step	&	Description 					\\ \cline{2-3} &
-1	&	A: Open the e-commerce website   		\\ \cline{2-3} &
-2	&	A: Click "Sign In"				\\ \cline{2-3} &
-4	&	A: Click "REGISTER" button			\\ \cline{2-3} &
-5	&	A: Enter valid email address \& password, remaining fields optional	\\ \cline{2-3} &
-6	&	A: Click "REGISTER" button			\\ \cline{2-3} &
-7	&	S: Validate new user information 		\\ \cline{2-3} &
-8	&	S: Create user account				\\ \cline{2-3} &
-9	&	S: Authenticate user				\\ \cline{2-3}
-\hline
-\multirow{3}{*}{Extensions} &
-7a	&	\begin{tabular}[c]{@{}l@{}}
-		Username/email address invalid/missing \\
-		S:Display proper error message
+\begin{enumerate}
+	\item\spec{1} Sign-in \meetsreq{1}
+		\begin{table}[ht]
+			\centering
+			\caption{Sign-in decission table}
+			\label{signin-decission-table}
+			\begin{tabular}{|c|l|c|c|c|c|}
+				\hline
+				\parbox[t]{3mm}{\multirow{4}{*}{\rotatebox[origin=c]{90}{Conditions}}} &
+				New user 		& \TRUE	& \FALSE	& \FALSE	& \NONE		\\ \cline{2-6} &
+				Valid username		& \NONE	& \FALSE	& \NONE		& \TRUE		\\ \cline{2-6} &
+				Valid password		& \NONE	& \NONE		& \FALSE	& \TRUE		\\ \cline{2-6} &
+				\multicolumn{5}{l|}{} \\
+				\hline
+				\parbox[t]{3mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{Actions}}} &
+				Create user		& \YES	& \NO		& \NO		& \NO		\\ \cline{2-6} &
+				Login fail (error) 	& \NO	& \YES		& \YES		& \NO		\\ \cline{2-6} &
+				Login success		& \YES	& \NO		& \NO		& \YES		\\ \hline
+			\end{tabular}
+		\end{table}
+		\newpage
+		\begin{enumerate}
+	\item\spec{2} Register new customer \meetsreq{1.1}
+		\begin{table}[ht]
+			\centering
+			\caption{Register new customer use case}
+			\label{register-new-customer-use-case}
+			\begin{tabular}{|l|l|p{8cm}|}
+				\hline
+			\multirow{9}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+				Step	&	Description 					\\ \cline{2-3} &
+				1	&	A: Open the e-commerce website   		\\ \cline{2-3} &
+				2	&	A: Click "Sign In"				\\ \cline{2-3} &
+				4	&	A: Click "REGISTER" button			\\ \cline{2-3} &
+				5	&	A: Enter valid email address \& password, remaining fields optional	\\ \cline{2-3} &
+				6	&	A: Click "REGISTER" button			\\ \cline{2-3} &
+				7	&	S: Validate new user information 		\\ \cline{2-3} &
+				8	&	S: Create user account				\\ \cline{2-3} &
+				9	&	S: Authenticate user				\\ \cline{2-3}
+				\hline
+				\multirow{3}{*}{Extensions} &
+				7a	&	\begin{tabular}[c]{@{}l@{}}
+				Username/email address invalid/missing \\
+				S:Display proper error message
+			\end{tabular}	\\ \cline{2-3} &
+				7b	&	\begin{tabular}[c]{@{}l@{}}
+				Password missing or mismatch \\
+				S:Display proper error message
+			\end{tabular}	\\ \cline{2-3}
+			\hline
+		\end{tabular}
+	\end{table}
+\item\spec{3} Login \meetsreq{1.2}
+	\begin{table}[ht]
+		\centering
+		\caption{Login use case}
+		\label{login-use-case}
+		\begin{tabular}{|l|l|p{8cm}|}
+			\hline
+			Preconditions:	& \multicolumn{2}{l|}{User exists and is logged out} \\ \hline
+		\multirow{5}{*}{\begin{tabular}[l]{@{}l@{}}\\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+			Step	&	Description 					\\ \cline{2-3} &
+			1	&	A: Open the e-commerce website   		\\ \cline{2-3} &
+			2	&	A: Click "Sign In"				\\ \cline{2-3} &
+			3	&	A: Enter user email address \& password		\\ \cline{2-3} &
+			4	&	A: Click "SIGN IN" button			\\ \cline{2-3} &
+			5	&	S: Authenticate user				\\ \cline{2-3}
+			\hline
+			\multirow{3}{*}{Extensions} &
+			5a	&	\begin{tabular}[c]{@{}l@{}}
+			Invalid e-mail \\
+			S:Display proper error message
 		\end{tabular}	\\ \cline{2-3} &
-7b	&	\begin{tabular}[c]{@{}l@{}}
-		Password missing or mismatch \\
-		S:Display proper error message
+			5b	&	\begin{tabular}[c]{@{}l@{}}
+			Valid e-mail and incorrect password \\
+			S:Display proper error message
 		\end{tabular}	\\ \cline{2-3}
-\hline
-\end{tabular}
+		\hline
+	\end{tabular}
 \end{table}
+\newpage
+	\item\spec{4} Password reset \meetsreq{1.3}
+		\begin{table}[ht]
+			\centering
+			\caption{Password reset use case}
+			\label{password-reset-use-case}
+			\begin{tabular}{|l|l|l|}
+				\hline
+				Preconditions:	& \multicolumn{2}{l|}{User logged in} \\ \hline
+			\multirow{10}{*}{\begin{tabular}[l]{@{}l@{}}\\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+				Step	&	Description 					\\ \cline{2-3} &
+				1	&	A: Click "Change Password"	   		\\ \cline{2-3} &
+				2	&	A: Enter current password, new password and retype password	\\ \cline{2-3} &
+				3	&	A: Click "CONTINUE" button			\\ \cline{2-3} &
+				4	&	S: Validate Passwords				\\ \cline{2-3} &
+				5	&	S: Change password				\\ \cline{2-3} &
+				7	&	A: Click "Sign Out"				\\ \cline{2-3} &
+				8	&	A: Enter username \& new password		\\ \cline{2-3} &
+				9	&	A: Click "SIGN IN" button			\\ \cline{2-3} &
+				10	&	S: Authenticate user				\\ \cline{2-3}
+				\hline
+				\multirow{3}{*}{Extensions} &
+				4a	&	\begin{tabular}[c]{@{}l@{}}
+				Invalid current password incorrect and valid new password combination \\
+				S:Display proper error message
+			\end{tabular}	\\ \cline{2-3} &
+				4b	&	\begin{tabular}[c]{@{}l@{}}
+				Valid current password and invalid new password combination \\
+				S:Display proper error message
+			\end{tabular}	\\ \cline{2-3}
+			\hline
+		\end{tabular}
+	\end{table}
+\end{enumerate}
+\item\spec{5} Selecting products \meetsreq{2}
+	\begin{table}[ht]
+		\centering
+		\caption{Selecting products use case}
+		\label{selecting-products-use-case}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			Preconditions:	& \multicolumn{2}{l|}{User logged in with cart empty} \\ \hline
+		\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+			Step	&	Description 						\\ \cline{2-3} &
+			1	&	A: Click "ADD TO CART" for a product in the store	\\ \cline{2-3} &
+			2	&	S: Add product to cart					\\ \cline{2-3}
+			\hline
+		\end{tabular}
+	\end{table}
+	\newpage
+\item\spec{6} Continue shopping \meetsreq{3} \\
+	\begin{tikzpicture}[scale=0.5, transform shape]
+		\begin{umlstate}[name=continueShopping]{Continue shopping}
+			\umlstateinitial[x=4, name=addProduct]
+			\umlbasicstate[x=4, y=-3, name=shoppingCart, fill=white]{Shopping cart}
+			\umlHVtrans[arg={User adds product}, pos=1.2]{addProduct}{shoppingCart}
 
-\paragraph{Login}
+			\umlbasicstate[y=-6, name=increaseQuantity, fill=white, scale=0.5]{Increase Quantity}
+			umltrans{shoppingCart}{increaseQuantity}
 
-\begin{table}[ht]
-\centering
-\caption{Use case}
-\label{login-use-case}
-\begin{tabular}{|l|l|p{8cm}|}
-\hline
-Preconditions:	& \multicolumn{2}{l|}{User exists and is logged out} \\ \hline
-\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
-Step	&	Description 					\\ \cline{2-3} &
-1	&	A: Open the e-commerce website   		\\ \cline{2-3} &
-2	&	A: Click "Sign In"				\\ \cline{2-3} &
-3	&	A: Enter user email address \& password		\\ \cline{2-3} &
-4	&	A: Click "SIGN IN" button			\\ \cline{2-3} &
-5	&	S: Authenticate user				\\ \cline{2-3}
-\hline
-\multirow{3}{*}{Extensions} &
-5a	&	\begin{tabular}[c]{@{}l@{}}
-		Invalid e-mail \\
-		S:Display proper error message
-		\end{tabular}	\\ \cline{2-3} &
-5b	&	\begin{tabular}[c]{@{}l@{}}
-		Valid e-mail and incorrect password \\
-		S:Display proper error message
+			\umlbasicstate[x=8, y=-6, name=addNewItem, fill=white]{Add New Item}
+			\umltrans{shoppingCart}{addNewItem}
+
+			\umlbasicstate[x=4, y=-9, name=updateItems, fill=white]{Update total number of items}
+			\umltrans{increaseQuantity}{updateItems}
+			\umltrans{addNewItem}{updateItems}
+
+			\umlstateexit[x=4, y=-12, name=productAdded, fill=black, color=white]{Product added}
+
+			\umltrans[arg={Products updated}, pos=1]{updateItems}{productAdded}
+		\end{umlstate}
+	\end{tikzpicture}
+
+	\begin{table}[ht]
+		\centering
+		\caption{Continue shopping use case}
+		\label{continue-shopping-use-case}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			Preconditions:	& \multicolumn{2}{l|}{User logged in with one item in cart} \\ \hline
+		\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+			Step	&	Description 						\\ \cline{2-3} &
+			1	&	A: Click "ADD TO CART" for another product in the store	\\ \cline{2-3} &
+			2	&	S: Add product to cart					\\ \cline{2-3}
+			\hline
+		\end{tabular}
+	\end{table}
+\item\spec{7} Checkout \meetsreq{4}
+	\begin{table}[ht]
+		\centering
+		\caption{Checkout use case}
+		\label{checkout-use-case}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			Preconditions:	& \multicolumn{2}{l|}{User logged in with items in cart} \\ \hline
+		\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+			Step	&	Description 					\\ \cline{2-3} &
+			1	&	A: Click "Checkout"		   		\\ \cline{2-3} &
+			2	&	A: Click "Continue Checkout"			\\ \cline{2-3} &
+			3	&	A: Fill out form				\\ \cline{2-3} &
+			4	&	A: Click "Continue Checkout"			\\ \cline{2-3} &
+			5	&	A: Select shipping method			\\ \cline{2-3} &
+			5	&	A: Click "Continue Checkout"			\\ \cline{2-3} &
+			6	&	S: Validate shipping method			\\ \cline{2-3}
+			\hline
+			\multirow{1}{*}{Extensions} &
+			6a	&	\begin{tabular}[c]{@{}l@{}}
+			Shipping option not selected \\
+			S:Display proper error message
 		\end{tabular}	\\ \cline{2-3}
-\hline
-\end{tabular}
+		\hline
+	\end{tabular}
 \end{table}
+\newpage
+	\item\spec{7} Change number of items \meetsreq{5}
+		\begin{table}[ht]
+			\centering
+			\caption{Change number of items use case}
+			\label{change-number-of-items-use-case}
+			\begin{tabular}{|l|l|l|}
+				\hline
+				Preconditions:	& \multicolumn{2}{l|}{User logged in with items in cart} \\ \hline
+			\multirow{5}{*}{\begin{tabular}[l]{@{}l@{}}\\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+				Step	&	Description 						\\ \cline{2-3} &
+				1	&	A: Click on "My cart"		   			\\ \cline{2-3} &
+				2	&	A: For an item, change QTY drop-down value from 1 to 30	\\ \cline{2-3} &
+				3	&	S: Update QTY for item to 30				\\ \cline{2-3} &
+				4	&	A: For another item, clicke remove button		\\ \cline{2-3} &
+				5	&	S: Remove item fom cart					\\ \cline{2-3}
+				\hline
+			\end{tabular}
+		\end{table}
+	\item\spec{8} Finalize order successfully \meetsreq{6}
+		\begin{table}[ht]
+			\centering
+			\caption{Finalize order successfully}
+			\label{finalize-order-use-case}
+			\begin{tabular}{|l|l|l|}
+				\hline
+				Preconditions:	& \multicolumn{2}{l|}{User logged in with billing \& shipping information already entered} \\ \hline
+			\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+				Step	&	Description 					\\ \cline{2-3} &
+				1	&	A: Click "Checkout"		   		\\ \cline{2-3} &
+				2	&	A: Click "CONTINUE CHECKOUT"			\\ \cline{2-3} &
+				3	&	A: Click "CONTINUE CHECKOUT"			\\ \cline{2-3} &
+				4	&	S: Click "PLACE ORDER"				\\ \cline{2-3} &
+				5	&	S: Empty cart					\\ \cline{2-3} &
+				6	&	S: Print order confirmation			\\ \cline{2-3}
+				\hline
+			\end{tabular}
+		\end{table}
+	\item\spec{9} Log out \meetsreq{7}
+		\begin{table}[ht]
+			\centering
+			\caption{Log out use case}
+			\label{logout-products-use-case}
+			\begin{tabular}{|l|l|l|}
+				\hline
+				Preconditions:	& \multicolumn{2}{l|}{User logged in} \\ \hline
+			\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
+				Step	&	Description 		\\ \cline{2-3} &
+				1	&	A: Click "Sign out"	\\ \cline{2-3} &
+				2	&	S: Log out user		\\ \cline{2-3}
+				\hline
+			\end{tabular}
+		\end{table}
+\end{enumerate}
 
-
-\paragraph{Password reset}
-
-\begin{table}[ht]
-\centering
-\caption{Use case}
-\label{change-password-use-case}
-\begin{tabular}{|l|l|l|}
-\hline
-Preconditions:	& \multicolumn{2}{l|}{User logged in} \\ \hline
-\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
-Step	&	Description 					\\ \cline{2-3} &
-1	&	A: Click "Change Password"	   		\\ \cline{2-3} &
-2	&	A: Enter current password, new password and retype password	\\ \cline{2-3} &
-3	&	A: Click "CONTINUE" button			\\ \cline{2-3} &
-4	&	S: Validate Passwords				\\ \cline{2-3} &
-5	&	S: Change password				\\ \cline{2-3} &
-7	&	A: Click "Sign Out"				\\ \cline{2-3} &
-8	&	A: Enter username \& new password		\\ \cline{2-3} &
-9	&	A: Click "SIGN IN" button			\\ \cline{2-3} &
-10	&	S: Authenticate user				\\ \cline{2-3}
-\hline
-\multirow{3}{*}{Extensions} &
-4a	&	\begin{tabular}[c]{@{}l@{}}
-		Invalid current password incorrect and valid new password combination \\
-		S:Display proper error message
-		\end{tabular}	\\ \cline{2-3} &
-4b	&	\begin{tabular}[c]{@{}l@{}}
-		Valid current password and invalid new password combination \\
-		S:Display proper error message
-		\end{tabular}	\\ \cline{2-3}
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Selecting products}
-
-\begin{table}[ht]
-\centering
-\caption{Use case}
-\label{selecting-products-use-case}
-\begin{tabular}{|l|l|l|}
-\hline
-Preconditions:	& \multicolumn{2}{l|}{User logged in with cart empty} \\ \hline
-\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
-Step	&	Description 						\\ \cline{2-3} &
-1	&	A: Click "ADD TO CART" for a product in the store	\\ \cline{2-3} &
-2	&	S: Add product to cart					\\ \cline{2-3}
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Continue Shopping}
-
-\begin{tikzpicture}[scale=0.5, transform shape]
-	\begin{umlstate}[name=continueShopping]{Continue shopping}
-		\umlstateinitial[x=4, name=addProduct]
-		\umlbasicstate[x=4, y=-3, name=shoppingCart, fill=white]{Shopping cart}
-		\umlHVtrans[arg={User adds product}, pos=1.2]{addProduct}{shoppingCart}
-
-		\umlbasicstate[y=-6, name=increaseQuantity, fill=white, scale=0.5]{Increase Quantity}
-		\umltrans{shoppingCart}{increaseQuantity}
-
-		\umlbasicstate[x=8, y=-6, name=addNewItem, fill=white]{Add New Item}
-		\umltrans{shoppingCart}{addNewItem}
-
-		\umlbasicstate[x=4, y=-9, name=updateItems, fill=white]{Update total number of items}
-		\umltrans{increaseQuantity}{updateItems}
-		\umltrans{addNewItem}{updateItems}
-
-		\umlstateexit[x=4, y=-12, name=productAdded, fill=black, color=white]{Product added}
-
-		\umltrans[arg={Products updated}, pos=1]{updateItems}{productAdded}
-	\end{umlstate}
-\end{tikzpicture}
-
-\begin{table}[ht]
-\centering
-\caption{Use case}
-\label{continue-shopping-use-case}
-\begin{tabular}{|l|l|l|}
-\hline
-Preconditions:	& \multicolumn{2}{l|}{User logged in with one item in cart} \\ \hline
-\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
-Step	&	Description 						\\ \cline{2-3} &
-1	&	A: Click "ADD TO CART" for another product in the store	\\ \cline{2-3} &
-2	&	S: Add product to cart					\\ \cline{2-3}
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Checkout}
-
-\begin{table}[ht]
-\centering
-\caption{Use case}
-\label{checkout-use-case}
-\begin{tabular}{|l|l|l|}
-\hline
-Preconditions:	& \multicolumn{2}{l|}{User logged in with items in cart} \\ \hline
-\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
-Step	&	Description 					\\ \cline{2-3} &
-1	&	A: Click "Checkout"		   		\\ \cline{2-3} &
-2	&	A: Click "Continue Checkout"			\\ \cline{2-3} &
-3	&	A: Fill out form				\\ \cline{2-3} &
-4	&	A: Click "Continue Checkout"			\\ \cline{2-3} &
-5	&	A: Select shipping method			\\ \cline{2-3} &
-5	&	A: Click "Continue Checkout"			\\ \cline{2-3} &
-6	&	S: Validate shipping method			\\ \cline{2-3}
-\hline
-\multirow{1}{*}{Extensions} &
-6a	&	\begin{tabular}[c]{@{}l@{}}
-		Shipping option not selected \\
-		S:Display proper error message
-		\end{tabular}	\\ \cline{2-3}
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Change number of items}
-
-\begin{table}[ht]
-\centering
-\caption{Use case}
-\label{change-number-of-items-use-case}
-\begin{tabular}{|l|l|l|}
-\hline
-Preconditions:	& \multicolumn{2}{l|}{User logged in with items in cart} \\ \hline
-\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
-Step	&	Description 						\\ \cline{2-3} &
-1	&	A: Click on "My cart"		   			\\ \cline{2-3} &
-2	&	A: For an item, change QTY drop-down value from 1 to 30	\\ \cline{2-3} &
-3	&	S: Update QTY for item to 30				\\ \cline{2-3} &
-4	&	A: For another item, clicke remove button		\\ \cline{2-3} &
-5	&	S: Remove item fom cart					\\ \cline{2-3}
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Finalize order}
-
-\begin{table}[ht]
-\centering
-\caption{Use case}
-\label{finalize-order-use-case}
-\begin{tabular}{|l|l|l|}
-\hline
-Preconditions:	& \multicolumn{2}{l|}{User logged in with billing \& shipping information already entered} \\ \hline
-\multirow{6}{*}{\begin{tabular}[l]{@{}l@{}}\\ \\ \\ Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
-Step	&	Description 					\\ \cline{2-3} &
-1	&	A: Click "Checkout"		   		\\ \cline{2-3} &
-2	&	A: Click "CONTINUE CHECKOUT"			\\ \cline{2-3} &
-3	&	A: Click "CONTINUE CHECKOUT"			\\ \cline{2-3} &
-4	&	S: Click "PLACE ORDER"				\\ \cline{2-3} &
-5	&	S: Empty cart					\\ \cline{2-3} &
-6	&	S: Print order confirmation			\\ \cline{2-3}
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection{Logout}
-
-\begin{table}[ht]
-\centering
-\caption{Use case}
-\label{logout-products-use-case}
-\begin{tabular}{|l|l|l|}
-\hline
-Preconditions:	& \multicolumn{2}{l|}{User logged in} \\ \hline
-\multirow{3}{*}{\begin{tabular}[l]{@{}l@{}}Main Success Scenario\\ A: Actor	\\ S: System	\end{tabular}} &
-Step	&	Description 		\\ \cline{2-3} &
-1	&	A: Click "Sign out"	\\ \cline{2-3} &
-2	&	S: Log out user		\\ \cline{2-3}
-\hline
-\end{tabular}
-\end{table}
+\newpage
 
 \subsection{Incident Report}
 
@@ -331,7 +331,7 @@ Step	&	Description 		\\ \cline{2-3} &
 \end{table}
 \end{center}
 
-\subsection{Automated tests and gropuing}
+\subsection{Automated tests and grouping}
 GitHub repository for automated tests: \url{https://github.com/proyvind/inf3121}
 \includegraphics{TestSuitePassed}
 
@@ -362,6 +362,16 @@ TODO: It would be more sensible to actually run the logout unit test 7 before
 using the functionalty covered by is being used in test 1.1 \& 1.2..
 
 
+\subsection{Transitioning manual to automated tests}
 
+\begin{table}[htbp]
+\begin{tabular}{|l|l|}
+\hline
+Requirement & Specification   \\
+\hline
+\xintFor* #1 in \requirements\do {\ref{#1}&\specswithreq{#1}\\
+                                  \hline }%
+\end{tabular}
+\end{table}
 
 \end{document}
