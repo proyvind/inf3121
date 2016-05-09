@@ -201,8 +201,9 @@
 \item \req{3}{Continue shopping}{
 			In stead of just adding one item, the automatic test adds several items with different attributes
 			for in order to test that all the various items with the various attribute type combinations.
-	}
-	\begin{tikzpicture}[scale=0.5, transform shape]
+	} \\
+	\\
+	\begin{tikzpicture}[scale=0.6, transform shape]
 		\begin{umlstate}[name=continueShopping]{Continue shopping}
 			\umlstateinitial[x=4, name=addProduct]
 			\umlbasicstate[x=4, y=-3, name=shoppingCart, fill=white]{Shopping cart}
@@ -241,6 +242,8 @@
 			\hline
 		\end{tabular}
 	\end{table}
+
+\newpage
 \item \req{4}{Checkout}{Automatic test is fully consistent with manual}
 	\begin{table}[ht]
 		\centering
@@ -269,7 +272,6 @@
 		\hline
 	\end{tabular}
 \end{table}
-\newpage
 	\item \req{5}{Change number of items}{
 				Was unable to record the remove item action as specified in step 5 with selenium and
 				didn't have the time to figure out how to implement it.
@@ -293,7 +295,10 @@
 				\hline
 			\end{tabular}
 		\end{table}
-	\item \req{6}{Finalize order successfully}{Automatic test is fully consistent with manual}
+
+\newpage
+
+	\item \req{6}{Finalize order successfully}{Automatic test is fully consistent with manual} \\
 		\begin{table}[ht]
 			\centering
 			\caption{Finalize order successfully}
