@@ -9,7 +9,7 @@
 
 \makeatletter
 
-\newcommand{\req}[2]{%
+\newcommand{\req}[3]{%
 \textbf{R#1} \textit{#2}%
 \phantomsection
 \def\@currentlabel{R#1}%
@@ -18,8 +18,8 @@
 \global\@namedef{req@#1@ismetby}{}%
 \def\@currentlabel{#2}%
 \label{namereq@#1}%
-\g@addto@macro\requirementnames{{namereq@#1}}%
-\global\@namedef{namereq@#1@ismetby}{}%
+\def\@currentlabel{#3}%
+\label{remarkreq@#1}%
 }
 
 \newcommand{\meetsthisreq}[1]{% (renamed from \meetsreq above)
